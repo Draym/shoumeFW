@@ -8,10 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function (TokenManager) {
+
+    console.log("Salut: ", TokenManager.get());
   });

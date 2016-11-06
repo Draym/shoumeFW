@@ -8,19 +8,23 @@
  * Factory in the shoumeApp.
  */
 angular.module('shoumeApp')
-  .factory('tokenManager', function () {
+  .factory('TokenManager', function ($cookies, DateTools) {
     // Service logic
-    // ...
+    var id = "token";
+    var timeOut = 30;
 
     // Public API here
     return {
       get: function () {
+        return $cookies.get(id);
       },
-      set: function(value) {
+      put: function(value) {
+        $cookies.put(id, value,  {
+          expires: DateTools.addMinutesToCurrentDate(timeOut)
+        });
       },
       remove: function() {
-      },
-      init: function() {
+        $cookies.remove(id);
       }
     };
   });

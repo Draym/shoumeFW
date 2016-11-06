@@ -14,7 +14,7 @@ angular.module('shoumeApp')
     $httpProvider.defaults.headers.put = {};
     $httpProvider.defaults.headers.patch = {};
   }])
-  .controller('CreateAccountCtrl', function ($scope, toastr, $http) {
+  .controller('CreateAccountCtrl', function ($scope, toastr, $http, TokenManager) {
     $scope.status = false;
     $scope.token = "?";
 
@@ -28,7 +28,7 @@ angular.module('shoumeApp')
     };
 
     var submitRequest = function (data) {
-
+      TokenManager.put($scope.name);
       $http({
         method: 'POST',
         url: 'https://shoume-keysim.c9users.io:8080/api/register',
