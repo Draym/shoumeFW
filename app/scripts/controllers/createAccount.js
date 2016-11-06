@@ -20,10 +20,10 @@ angular.module('shoumeApp')
 
     $scope.register = function () {
       console.log("register", $scope.name, $scope.email, $scope.password);
-      var data = JSON.stringify({
-        name: $scope.email,
+      var data = {
+        login: $scope.email,
         password: $scope.password
-      });
+      };
       submitRequest(data);
     };
 
@@ -33,8 +33,14 @@ angular.module('shoumeApp')
         method: 'POST',
         url: 'https://shoume-keysim.c9users.io:8080/api/register',
         data: data,
+          transformRequest: function(obj) {
+              var str = [];
+              for(var p in obj)
+              str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+              return str.join("&");
+          },
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then(
         function (response) {
