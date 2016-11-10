@@ -42,6 +42,16 @@ angular
         controller: 'CreateAccountCtrl',
         controllerAs: 'createAccount'
       })
+      .when('/listMoments', {
+        templateUrl: 'views/listMoments.html',
+        controller: 'ListmomentsCtrl',
+        controllerAs: 'listMoments'
+      })
+      .when('/myAccount', {
+        templateUrl: 'views/myAccount.html',
+        controller: 'MyAccountCtrl',
+        controllerAs: 'myAccount'
+      })
       .otherwise({
         redirectTo: '/'
       });

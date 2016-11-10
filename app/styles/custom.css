@@ -32,6 +32,18 @@
   color: #fff;
   background-color:#59b5fa;
 }
+
+.btn-invisible{
+  background: none;
+  border: none;
+  color:black
+}
+
+.btn-invisible:hover {
+  color: #fff;
+  background-color:#59b5fa;
+}
+
 @media(max-width:768px){
   #login-dp{
     background-color: inherit;

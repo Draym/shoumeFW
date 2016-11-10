@@ -8,45 +8,30 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-    $httpProvider.defaults.headers.common = {};
-    $httpProvider.defaults.headers.post = {};
-    $httpProvider.defaults.headers.put = {};
-    $httpProvider.defaults.headers.patch = {};
-  }])
-  .controller('LoginCtrl', function ($scope, $location, $http) {
-    $scope.login = function () {
-      console.log("login: ", $scope.email, $scope.password);
-      var data = {
-        login: $scope.email,
-        password: $scope.password
-      };
-      submitRequest(data);
+  .controller('LoginCtrl', function ($scope, $location, toastr, RequestAPI, User) {
+
+    $scope.userCtrl = User;
+    $scope.data = {};
+
+    $scope.loginPageLocation = function() {
+        return $location.path() == "/login";
     };
 
-    var submitRequest = function (data) {
-      $http({
-        method: 'POST',
-        url: 'https://shoume-keysim.c9users.io:8080/api/authenticate',
-          transformRequest: function(obj) {
-              var str = [];
-              for(var p in obj)
-              str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-              return str.join("&");
-          },
-        data: data,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      }).then(
-        function (response) {
-          // success callback
-          $scope.response = response.data;
-        },
-        function (response) {
-          // failure callback
-          $scope.response = response.statusText;
-        }
-      );
-    }
+    $scope.login = function () {
+      console.log("login: ", $scope.data.email, $scope.data.password);
+      RequestAPI.POST("/authenticate", $scope.data, submitSuccess, submitFailure);
+    };
+
+    var submitSuccess = function (response) {
+      $scope.status = true;
+      console.log(response);
+      toastr.success({'body': "Connected"});
+      User.connect(response.data.token);
+      $location.path("/")
+    };
+
+    var submitFailure = function (response) {
+      toastr.error({'body': response.data.message});
+      $scope.status = false;
+    };
   });
