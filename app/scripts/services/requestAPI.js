@@ -20,10 +20,10 @@ angular.module('shoumeApp')
 
     // Public API here
     return {
-      POST: function (url, data, success, failure) {
+      POST: function (url, data, success, failure, token) {
         $http({
           method: 'POST',
-          url: 'https://shoume-keysim.c9users.io:8080/api' + url,
+          url: 'https://shoume-keysim.c9users.io:8080/api' + url + (token != null ? "?token=" + token : ""),
           data: data,
           transformRequest: function(obj) {
             var str = [];
@@ -38,6 +38,28 @@ angular.module('shoumeApp')
           function (response) {
             // success callback
             if (response.data != null && response.data.success == true) {
+              success(response);
+            } else {
+              failure(response);
+            }
+          },
+          function (response) {
+            // failure callback
+            failure(response);
+          }
+        );
+      },
+      GET: function (url, success, failure, token) {
+        $http({
+          method: 'GET',
+          url: 'https://shoume-keysim.c9users.io:8080/api' + url + (token != null ? "?token=" + token : ""),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).then(
+          function (response) {
+            // success callback
+            if (response.data != null && ((response.data.success != null && response.data.success == true) || response.data.success == null)) {
               success(response);
             } else {
               failure(response);

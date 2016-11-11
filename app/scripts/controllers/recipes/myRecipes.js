@@ -8,10 +8,14 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MyRecipesCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MyRecipesCtrl', function ($scope, toaster, User, SubmitResult, RequestAPI, TokenManager) {
+
+    $scope.init = function () {
+      RequestAPI.GET("/user/" + User.getId() + "/recipes", SubmitResult.submitSuccess(function (response) {
+          $scope.myRecipes = response.data;
+        }),
+        SubmitResult.submitFailure(), TokenManager.get());
+    };
+
+    $scope.init();
   });
