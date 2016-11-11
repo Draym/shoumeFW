@@ -10,7 +10,7 @@ angular.module('shoumeApp')
   .directive('accountNavbarWidget', function () {
     return {
       restrict: 'A',
-      templateUrl: "views/accountNavbarWidget.html",
+      templateUrl: "views/account/accountNavbarWidget.html",
       controller: "AccountNavbarWidgetCtrl"
     }
   })
@@ -20,6 +20,10 @@ angular.module('shoumeApp')
   console.log("HI");
     $scope.myAccount = function() {
       $location.path("/myAccount");
+    };
+
+    $scope.myMoments = function() {
+      $location.path("/myMoments");
     };
 
     $scope.disconnect = function() {

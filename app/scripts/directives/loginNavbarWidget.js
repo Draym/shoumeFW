@@ -10,7 +10,7 @@ angular.module('shoumeApp')
   .directive('loginNavbarWidget', function () {
     return {
       restrict: 'A',
-      templateUrl: "views/loginNavbarWidget.html",
+      templateUrl: "views/login/loginNavbarWidget.html",
       controller: "LoginCtrl"
     }
   });

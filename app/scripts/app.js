@@ -33,24 +33,29 @@ angular
         controllerAs: 'about'
       })
       .when('/login', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/login/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
       .when('/createAccount', {
-        templateUrl: 'views/createAccount.html',
+        templateUrl: 'views/account/createAccount.html',
         controller: 'CreateAccountCtrl',
         controllerAs: 'createAccount'
       })
       .when('/listMoments', {
-        templateUrl: 'views/listMoments.html',
+        templateUrl: 'views/moments/listMoments.html',
         controller: 'ListmomentsCtrl',
         controllerAs: 'listMoments'
       })
       .when('/myAccount', {
-        templateUrl: 'views/myAccount.html',
+        templateUrl: 'views/account/myAccount.html',
         controller: 'MyAccountCtrl',
         controllerAs: 'myAccount'
+      })
+      .when('/myMoments', {
+        templateUrl: 'views/moments/myMoments.html',
+        controller: 'MyMomentsCtrl',
+        controllerAs: 'myMoments'
       })
       .otherwise({
         redirectTo: '/'

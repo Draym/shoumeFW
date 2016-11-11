@@ -37,7 +37,7 @@ angular.module('shoumeApp')
         }).then(
           function (response) {
             // success callback
-            if (response.data.success == true) {
+            if (response.data != null && response.data.success == true) {
               success(response);
             } else {
               failure(response);

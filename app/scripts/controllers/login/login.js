@@ -31,7 +31,11 @@ angular.module('shoumeApp')
     };
 
     var submitFailure = function (response) {
-      toastr.error({'body': response.data.message});
+      if (response.data != null) {
+        toastr.error({'body': response.data.message});
+      } else {
+        toastr.error({'body': "connexion failled"});
+      }
       $scope.status = false;
     };
   });
