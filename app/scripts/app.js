@@ -42,10 +42,10 @@ angular
         controller: 'CreateAccountCtrl',
         controllerAs: 'createAccount'
       })
-      .when('/listMoments', {
-        templateUrl: 'views/moments/listMoments.html',
-        controller: 'ListmomentsCtrl',
-        controllerAs: 'listMoments'
+      .when('/allMoments', {
+        templateUrl: 'views/moments/allMoments.html',
+        controller: 'AllMomentsCtrl',
+        controllerAs: 'allMoments'
       })
       .when('/myAccount', {
         templateUrl: 'views/account/myAccount.html',
@@ -56,6 +56,16 @@ angular
         templateUrl: 'views/moments/myMoments.html',
         controller: 'MyMomentsCtrl',
         controllerAs: 'myMoments'
+      })
+      .when('/myRecipes', {
+        templateUrl: 'views/recipes/myRecipes.html',
+        controller: 'MyRecipesCtrl',
+        controllerAs: 'myRecipes'
+      })
+      .when('/allRecipes', {
+        templateUrl: 'views/recipes/allRecipes.html',
+        controller: 'AllRecipesCtrl',
+        controllerAs: 'allRecipes'
       })
       .otherwise({
         redirectTo: '/'

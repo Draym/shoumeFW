@@ -43,11 +43,14 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <div login-navbar-widget> </div>
-              <div account-navbar-widget> </div>
+              <li><a ng-href="#/allMoments"><b>Moments</b></a></li>
+              <li><a ng-href="#/allRecipes"><b>Recipes</b></a></li>
+              <li><div login-navbar-widget> </div></li>
+              <li><div account-navbar-widget> </div></li>
             </ul>
           </div>
         </div>
@@ -107,12 +110,14 @@
         <script src="scripts/directives/loginNavbarWidget.js"></script>
         <script src="scripts/services/tokenManager.js"></script>
         <script src="scripts/services/dateTools.js"></script>
-        <script src="scripts/controllers/moments/listMoments.js"></script>
-        <script src="scripts/controllers/moments/myAccount.js"></script>
+        <script src="scripts/controllers/moments/allMoments.js"></script>
+        <script src="scripts/controllers/account/myAccount.js"></script>
         <script src="scripts/services/user.js"></script>
         <script src="scripts/services/requestAPI.js"></script>
         <script src="scripts/directives/accountNavbarWidget.js"></script>
         <script src="scripts/controllers/moments/myMoments.js"></script>
+        <script src="scripts/controllers/recipes/myRecipes.js"></script>
+        <script src="scripts/controllers/recipes/allRecipes.js"></script>
         <!-- endbuild -->
 </body>
 </html>

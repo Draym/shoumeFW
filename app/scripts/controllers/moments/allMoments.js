@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name shoumeApp.controller:ListmomentsCtrl
+ * @name shoumeApp.controller:AllMomentsCtrl
  * @description
- * # ListmomentsCtrl
+ * # AllMomentsCtrl
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('ListMomentsCtrl', function () {
+  .controller('AllMomentsCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
