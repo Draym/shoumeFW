@@ -8,10 +8,6 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AllMomentsCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AllMomentsCtrl', function ($scope) {
+    $scope.idMoment = 9;
   });

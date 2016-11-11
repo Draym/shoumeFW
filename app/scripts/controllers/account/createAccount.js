@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('CreateAccountCtrl', function ($scope, $location, toastr, User, RequestAPI) {
+  .controller('CreateAccountCtrl', function ($scope, $location, toaster, User, RequestAPI) {
     $scope.status = false;
     $scope.token = "?";
 
@@ -25,7 +25,7 @@ angular.module('shoumeApp')
       $scope.status = true;
       console.log(response);
       RequestAPI.POST("/authenticate",$scope.data, function(response) {
-        toastr.success({'body': "Connected"});
+        toaster.success({'body': "Connected"});
         console.log(response);
         User.connect(response.data.token);
         $location.path("/");
@@ -33,7 +33,7 @@ angular.module('shoumeApp')
     };
 
     var submitFailure = function(response) {
-      toastr.error({'body': response.data.message});
+      toaster.error({'body': response.data.message});
       $scope.status = false;
     };
   });

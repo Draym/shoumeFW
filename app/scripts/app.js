@@ -18,7 +18,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'toastr'
+    'toaster'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -42,30 +42,40 @@ angular
         controller: 'CreateAccountCtrl',
         controllerAs: 'createAccount'
       })
-      .when('/allMoments', {
-        templateUrl: 'views/moments/allMoments.html',
-        controller: 'AllMomentsCtrl',
-        controllerAs: 'allMoments'
-      })
       .when('/myAccount', {
         templateUrl: 'views/account/myAccount.html',
         controller: 'MyAccountCtrl',
         controllerAs: 'myAccount'
+      })
+      .when('/allMoments', {
+        templateUrl: 'views/moments/allMoments.html',
+        controller: 'AllMomentsCtrl',
+        controllerAs: 'allMoments'
       })
       .when('/myMoments', {
         templateUrl: 'views/moments/myMoments.html',
         controller: 'MyMomentsCtrl',
         controllerAs: 'myMoments'
       })
-      .when('/myRecipes', {
-        templateUrl: 'views/recipes/myRecipes.html',
-        controller: 'MyRecipesCtrl',
-        controllerAs: 'myRecipes'
+      .when('/moment/:id', {
+        templateUrl: 'views/moments/moment.html',
+        controller: 'MomentCtrl',
+        controllerAs: 'moment'
       })
       .when('/allRecipes', {
         templateUrl: 'views/recipes/allRecipes.html',
         controller: 'AllRecipesCtrl',
         controllerAs: 'allRecipes'
+      })
+      .when('/myRecipes', {
+        templateUrl: 'views/recipes/myRecipes.html',
+        controller: 'MyRecipesCtrl',
+        controllerAs: 'myRecipes'
+      })
+      .when('/recipe/:id', {
+        templateUrl: 'views/recipes/recipe.html',
+        controller: 'RecipeCtrl',
+        controllerAs: 'recipe'
       })
       .otherwise({
         redirectTo: '/'

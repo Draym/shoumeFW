@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('LoginCtrl', function ($scope, $location, toastr, RequestAPI, User) {
+  .controller('LoginCtrl', function ($scope, $location, toaster, RequestAPI, User) {
 
     $scope.userCtrl = User;
     $scope.data = {};
@@ -25,16 +25,16 @@ angular.module('shoumeApp')
     var submitSuccess = function (response) {
       $scope.status = true;
       console.log(response);
-      toastr.success({'body': "Connected"});
+      toaster.success({'body': "Connected"});
       User.connect(response.data.token);
       $location.path("/")
     };
 
     var submitFailure = function (response) {
       if (response.data != null) {
-        toastr.error({'body': response.data.message});
+        toaster.error({'body': response.data.message});
       } else {
-        toastr.error({'body': "connexion failled"});
+        toaster.error({'body': "connexion failled"});
       }
       $scope.status = false;
     };
