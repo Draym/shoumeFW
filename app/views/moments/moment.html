@@ -12,7 +12,8 @@
         <li>
           <div class="comment-main-level">
             <!-- Avatar -->
-            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+            <div class="comment-avatar"><img
+              src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
             <!-- Contenedor del Comentario -->
             <div class="comment-box">
               <div class="comment-head">
@@ -22,7 +23,8 @@
                 <i class="fa fa-heart"></i>
               </div>
               <div class="comment-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae,
+                praesentium optio, sapiente distinctio illo?
               </div>
             </div>
           </div>
@@ -30,7 +32,8 @@
           <ul class="comments-list reply-list">
             <li>
               <!-- Avatar -->
-              <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+              <div class="comment-avatar"><img
+                src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
               <!-- Contenedor del Comentario -->
               <div class="comment-box">
                 <div class="comment-head">
@@ -40,14 +43,16 @@
                   <i class="fa fa-heart"></i>
                 </div>
                 <div class="comment-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae,
+                  praesentium optio, sapiente distinctio illo?
                 </div>
               </div>
             </li>
 
             <li>
               <!-- Avatar -->
-              <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+              <div class="comment-avatar"><img
+                src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
               <!-- Contenedor del Comentario -->
               <div class="comment-box">
                 <div class="comment-head">
@@ -57,7 +62,8 @@
                   <i class="fa fa-heart"></i>
                 </div>
                 <div class="comment-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae,
+                  praesentium optio, sapiente distinctio illo?
                 </div>
               </div>
             </li>
@@ -67,7 +73,8 @@
         <li>
           <div class="comment-main-level">
             <!-- Avatar -->
-            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+            <div class="comment-avatar"><img
+              src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
             <!-- Contenedor del Comentario -->
             <div class="comment-box">
               <div class="comment-head">
@@ -77,12 +84,39 @@
                 <i class="fa fa-heart"></i>
               </div>
               <div class="comment-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae,
+                praesentium optio, sapiente distinctio illo?
               </div>
             </div>
           </div>
         </li>
       </ul>
+      <div class="col-md-12">
+        <div class="row">
+          <div data-ng-show="!isReplyingToMoment">
+            <button type="button" class="btn btn btn-info pull-right"
+                    data-ng-click="isReplyingToMoment = true">Reply
+            </button>
+          </div>
+
+        </div>
+        <div class="row" data-ng-if="isReplyingToMoment">
+          <div class="pull-right" style="width:70%">
+            <div style="position:relative;">
+            <textarea class="form-control" name="message" id="field_message"
+                      style="resize: vertical; margin-top: 10px; margin-bottom: 5px;"
+                      data-ng-model="comment.message"
+                      placeholder="message..."
+                      required></textarea>
+              <i class="fa fa-remove" style="position:absolute;top:10px;right:10px;color:#33333380" data-ng-click="closeReply()"></i>
+            </div>
+
+            <button type="button" class="btn btn btn-success pull-right"
+                    data-ng-click="sendReply()">Send message
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
