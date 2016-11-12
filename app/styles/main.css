@@ -86,3 +86,24 @@ body {
     border-bottom: 0;
   }
 }
+
+.drop {
+  padding: 15px;
+  border: 2px #cbcbcb dashed;
+  border-radius: 5px;
+  line-height: 34px;
+}
+
+.clear {
+  clear: both;
+}
+
+.gallery-box {
+  width: 200px;
+  padding: 5px;
+  margin: 7px;
+  float: left;
+  height: 200px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}

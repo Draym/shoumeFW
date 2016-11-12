@@ -1,1 +1,7 @@
-<p>This is the myMoments view.</p>
+<button type="button" class="btn btn btn-primary pull-right"
+        data-ng-click="openAddMomentModal()"><i class="fa fa-plus-circle"></i> Moment
+</button>
+
+<div ng-repeat="moment in myMoments">
+  <a href="#/moment/{{moment.id}}">Check moment {{moment.title}}</a>
+</div>
