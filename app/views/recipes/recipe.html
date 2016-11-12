@@ -1,1 +1,12 @@
-<p>This is the recipe view for {{id}}</p>
+<h3>{{recipe.name}} {{recipe.date}}</h3>
+
+<br><h4>Ingredients</h4>
+<div ng-repeat="ingredient in recipe.ingredients_ids">
+</div>
+
+<br><h4>Process</h4>
+<div ng-repeat="process in recipe.processes_ids">
+</div>
+
+<br><h4>Description</h4>
+<p>{{recipe.description}}</p>

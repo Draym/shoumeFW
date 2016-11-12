@@ -1,1 +1,5 @@
 <p>This is the allRecipes view.</p>
+
+<div ng-repeat="recipe in recipes">
+	<a href="#/recipe/{{recipe.id}}">Check recipe {{recipe.name}}</a>
+</div>

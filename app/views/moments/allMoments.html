@@ -1,4 +1,5 @@
 <p>This is the listMoments view.</p>
 
-
-<a href="#/moment/{{idMoment}}">check moment</a>
+<div ng-repeat="moment in moments">
+	<a href="#/moment/{{moment.id}}">Check moment {{moment.title}}</a>
+</div>
