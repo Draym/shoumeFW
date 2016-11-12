@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e27e6d80-7526-4e4d-b5ef-8ae762ef0214" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/moments/moment.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/moments/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/moments/addMomentModal.html" afterPath="$PROJECT_DIR$/app/views/moments/addMomentModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/moments/moment.html" afterPath="$PROJECT_DIR$/app/views/moments/moment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/user.js" afterPath="$PROJECT_DIR$/app/scripts/services/user.js" />
     </list>
     <ignored path="shoume4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,16 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="about.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/about.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="moment.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="moment.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/moment.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1">
@@ -99,6 +87,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="16" column="58" selection-start-line="13" selection-start-column="6" selection-end-line="16" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="647">
+              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -192,7 +190,6 @@
         <option value="$PROJECT_DIR$/app/scripts/services/requestAPI.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/allRecipes.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/user.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/login/login.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/myRecipes.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/toolsUtils.js" />
@@ -213,6 +210,7 @@
         <option value="$PROJECT_DIR$/app/views/moments/addMomentModal.html" />
         <option value="$PROJECT_DIR$/app/views/moments/moment.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/moments/moment.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/user.js" />
       </list>
     </option>
   </component>
@@ -1256,7 +1254,7 @@
       <workItem from="1478789697201" duration="9617000" />
       <workItem from="1478834547648" duration="5455000" />
       <workItem from="1478847361553" duration="10655000" />
-      <workItem from="1478969483971" duration="14333000" />
+      <workItem from="1478969483971" duration="14637000" />
     </task>
     <task id="LOCAL-00001" summary="add tokenManager&#10;correction width login css">
       <created>1478418412963</created>
@@ -1349,11 +1347,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478980775237</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[ADD] send comment">
+      <created>1478983864731</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1478983864731</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63240000" />
+    <option name="totallyTimeSpent" value="63544000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1438,7 +1443,8 @@
     <MESSAGE value="[ADD] edit profile" />
     <MESSAGE value="[ADD] add a moment&#10;&#10;[ADD] library flow.js to import file&#10;[ADD] fa fa-icon&#10;[ADD] ui-bootstrap with modal" />
     <MESSAGE value="[ADD] add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] add comments" />
+    <MESSAGE value="[ADD] send comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] send comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1606,14 +1612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="20" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1837,6 +1835,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
           <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding />
         </state>
       </provider>

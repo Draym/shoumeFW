@@ -17,8 +17,6 @@ angular.module('shoumeApp')
 
     var init = function() {
       var token = TokenManager.get();
-
-      console.log("init! token?:", token);
       (token == null ? disconnect() : connect());
     };
 
@@ -47,7 +45,6 @@ angular.module('shoumeApp')
           init();
           id = false;
         }
-        console.log("connected: ", id);
         return id;
       },
       connect: function(token, userId) {
