@@ -9,11 +9,13 @@
  */
 angular.module('shoumeApp')
   .controller('AboutCtrl', function ($scope, $cookies) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    $(document).ready(function() {
+      $('#Carousel').carousel({
+        interval: 5000
+      })
+    });
+
     $scope.removeCookies = function () {
       $cookies.remove("userConnected");
       $cookies.remove("token")
