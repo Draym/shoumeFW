@@ -21,7 +21,6 @@ angular.module('shoumeApp')
             SubmitResult.submitFailure(), TokenManager.get());
         }),
         SubmitResult.submitFailure(), TokenManager.get());
-
     };
 
     $scope.closeReply = function() {
