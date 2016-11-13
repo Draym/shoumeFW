@@ -23,8 +23,13 @@ angular.module('shoumeApp')
           if (!(optionalMessage == null)) {
             toaster.success({'body': (optionalMessage == "" ? "Done" : optionalMessage)});
           }
-          if (!(optionalTask == null) && (typeof optionalTask === "function")) {
-            optionalTask(response);
+          if (!(optionalTask == null)) {
+            if ((typeof optionalTask === "function")) {
+              optionalTask(response);
+            } else {
+              toaster.success({'body': (optionalTask == "" ? "Done" : optionalTask)});
+            }
+
           }
         };
       },

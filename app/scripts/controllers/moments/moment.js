@@ -38,8 +38,7 @@ angular.module('shoumeApp')
 
     $scope.sendReply = function() {
       console.log("comment: ", $scope.comment);
-      RequestAPI.POST("/moment/" + $scope.moment.id + "/comment", $scope.comment, SubmitResult.submitSuccess(function (response) {
-        }, "comment send"),
+      RequestAPI.POST("/moment/" + $scope.moment.id + "/comment", $scope.comment, SubmitResult.submitSuccess("comment send"),
         SubmitResult.submitFailure(), TokenManager.get());
     };
     $scope.init();
