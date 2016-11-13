@@ -17,8 +17,8 @@ angular.module('shoumeApp')
       return $location.path() == "/login";
     };
 
-    $scope.login = function () {
-      console.log("login: ", $scope.data.email, $scope.data.password);
+    $scope.doLogin = function () {
+      console.log("login: ", $scope.data.login, $scope.data.password);
       RequestAPI.POST("/authenticate", $scope.data,
         SubmitResult.submitSuccess(function (response) {
           User.connect(response.data.token, response.data.id);
