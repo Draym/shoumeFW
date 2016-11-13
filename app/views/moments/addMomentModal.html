@@ -26,11 +26,11 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group"
-             data-ng-class="{ 'has-error' : editForm.message.$invalid && !editForm.message.$pristine }">
-          <label class="control-label" for="field_message">Message</label><i style="color: red">*</i>
-          <textarea class="form-control" name="message" id="field_message" style="height: 150px; resize: vertical"
-                    data-ng-model="moment.message"
-                    placeholder="message..."
+             data-ng-class="{ 'has-error' : editForm.content.$invalid && !editForm.content.$pristine }">
+          <label class="control-label" for="field_content">content</label><i style="color: red">*</i>
+          <textarea class="form-control" name="content" id="field_content" style="height: 150px; resize: vertical"
+                    data-ng-model="moment.content"
+                    placeholder="content..."
                     required
           ></textarea>
         </div>
