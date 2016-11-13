@@ -8,7 +8,7 @@
  * Factory in the shoumeApp.
  */
 angular.module('shoumeApp')
-  .factory('SubmitResult', function (toaster) {
+  .factory('SubmitResult', function ($location, toaster) {
     // Service logic
     // ...
 
@@ -38,6 +38,9 @@ angular.module('shoumeApp')
           console.log("Fail:", response);
           if (response.data != null) {
             toaster.error({'body': (response.data.message == null ? response.statusText : response.data.message)});
+            if (response.data.message != null && response.data.message == "No token provided.") {
+              $location.path("/login");
+            }
           } else {
             toaster.error({'body': (optionalMessage == null ? "An error happened" : optionalMessage)});
           }
