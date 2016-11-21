@@ -1,2 +1,2 @@
 # shoumeFW
-FrontWeb for the BJTU school project: shoume
+[BJTU][Web] FrontWeb for the BJTU school project: shoume. Using AngularJS + Bootstrap
