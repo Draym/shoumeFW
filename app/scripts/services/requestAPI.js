@@ -18,12 +18,13 @@ angular.module('shoumeApp')
     // Service logic
     // ...
 
+    var api_url = 'https://shoume-keysim.c9users.io:8080/api';
     // Public API here
     return {
       POST: function (url, data, success, failure, token) {
         $http({
           method: 'POST',
-          url: 'https://shoume-keysim.c9users.io:8080/api' + url + (token != null ? "?token=" + token : ""),
+          url:  api_url + url + (token != null ? "?token=" + token : ""),
           data: data,
           transformRequest: function(obj) {
             var str = [];
@@ -52,7 +53,7 @@ angular.module('shoumeApp')
       GET: function (url, success, failure, token) {
         $http({
           method: 'GET',
-          url: 'https://shoume-keysim.c9users.io:8080/api' + url + (token != null ? "?token=" + token : ""),
+          url: api_url + url + (token != null ? "?token=" + token : ""),
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           }
