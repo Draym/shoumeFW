@@ -18,7 +18,7 @@ angular.module('shoumeApp')
     // Service logic
     // ...
 
-    var api_url = '92.222.72.189:4243/api';
+    var api_url = 'http://92.222.72.189:4243/api';
     // Public API here
     return {
       POST: function (url, data, success, failure, token) {
