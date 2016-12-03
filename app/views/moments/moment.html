@@ -1,6 +1,7 @@
-<h3>{{moment.title}} {{moment.date}}</h3><br>
-<p>{{moment.content}}</p>
-
+<div class="detail-block">
+  <h3>{{moment.title}} <small>{{ moment.date | date:'medium'}}</small></h3><hr>
+  <p>{{moment.content}}</p>
+</div>
 
 <div class="container">
   <div class="row">

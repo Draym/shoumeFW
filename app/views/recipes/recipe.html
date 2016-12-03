@@ -1,12 +1,14 @@
-<h3>{{recipe.name}} {{recipe.date}}</h3>
+<div class="detail-block">
+	<h3>{{recipe.name}} <small>{{ recipe.date | date:'medium'}}</small></h3><hr>
 
-<br><h4>Ingredients</h4>
-<div ng-repeat="ingredient in recipe.ingredients_ids">
+	<br><h4>Ingredients</h4>
+	<div ng-repeat="ingredient in recipe.ingredients_ids">
+	</div>
+
+	<br><h4>Process</h4>
+	<div ng-repeat="process in recipe.processes_ids">
+	</div>
+
+	<br><h4>Description</h4>
+	<p>{{recipe.description}}</p>
 </div>
-
-<br><h4>Process</h4>
-<div ng-repeat="process in recipe.processes_ids">
-</div>
-
-<br><h4>Description</h4>
-<p>{{recipe.description}}</p>
