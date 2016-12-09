@@ -10,6 +10,8 @@
 angular.module('shoumeApp')
   .controller('CreateAccountCtrl', function ($scope, $location, toaster, User, RequestAPI, SubmitResult) {
 
+    $scope.isBusy = false;
+
     $scope.register = function () {
       console.log("register", $scope.name, $scope.email, $scope.password);
       $scope.data = {
@@ -18,6 +20,7 @@ angular.module('shoumeApp')
       };
 
       // Create account
+      $scope.isBusy = true;
       RequestAPI.POST("/register", $scope.data,
         SubmitResult.submitSuccess(function (response) {
           // Connexion
@@ -25,6 +28,7 @@ angular.module('shoumeApp')
             SubmitResult.submitSuccess(function (response) {
               User.connect(response.data.token);
               $location.path("/");
+              $scope.isBusy = false;
             }, "Connected"),
             SubmitResult.submitFailure("Connexion Failed"));
         }),

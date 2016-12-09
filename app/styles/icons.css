@@ -1,0 +1,33 @@
+.icon_level::before {
+  background-position: -214px 0 !important;
+}
+.icon_preparation::before {
+  background-position: -194px 0 !important;
+}
+.icon_cooking::before {
+  background-position: -174px 0 !important;
+}
+.icon_load::before {
+  background-position: -154px 0 !important;
+}
+
+.icon_total::before {
+  background-position: -134px 0 !important;
+}
+
+.icon_people::before {
+  background-position: -214px -20px !important;
+}
+
+.icon_level::before, .icon_preparation::before, .icon_cooking::before, .icon_load::before, .icon_total::before, .icon_people::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon_level::before, .icon_preparation::before, .icon_cooking::before, .icon_load::before, .icon_total::before, .icon_people::before {
+  background: url("images/sprite_ico.png") no-repeat scroll 0 0 transparent;
+}

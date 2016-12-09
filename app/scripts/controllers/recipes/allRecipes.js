@@ -13,6 +13,12 @@ angular.module('shoumeApp')
     $scope.init = function () {
       RequestAPI.GET("/recipes", SubmitResult.submitSuccess(function (response) {
           $scope.recipes = response.data;
+
+          try {
+            for (var i = 0; i < $scope.recipes.length; ++i) {
+              $scope.recipes[i].description = JSON.parse($scope.recipes[i].description);
+            }
+          } catch (e) {}
         }),
         SubmitResult.submitFailure(), TokenManager.get());
     };

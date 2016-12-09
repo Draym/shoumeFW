@@ -1,4 +1,4 @@
-<div class="detail-block">
+<!--<div class="detail-block">
 	<h3>{{recipe.name}} <small>{{ recipe.date | date:'medium'}}</small></h3><hr>
 
 	<br><h4>Ingredients</h4>
@@ -11,4 +11,107 @@
 
 	<br><h4>Description</h4>
 	<p>{{recipe.description}}</p>
+</div>-->
+
+<div class="col-md-12">
+  <article class="recipe_main">
+    <header>
+      <h1>{{recipe.name}}</h1>
+    </header>
+
+    <section class="row mb5 recipe_infos">
+
+      <div id="recipeLeft" class="col-md-3">
+        <div id="ctl00_ContentPlaceHolder_visu_recette" class="collapse-small">
+          <img id="shareimg" class="wide mb5"
+               src="//static.cuisineaz.com/240x192/i79722-la-meilleure-pate-a-crepes-du-monde.jpg"
+               alt="La meilleure pâte à crêpes du monde" style="border-width:0px;">
+        </div>
+      </div>
+
+      <div id="recipeRight" class="col-md-7">
+        <div id="recetteNotes" class="recipe_note row">
+          <span class="rating pointer" data-modal="note" data-param-recipeid="50282">
+						<span class="rating-foreground cazStars medium"><span class="value-title" id="spNote"></span>
+								<div class="icon-star"></div><div class="icon-star"></div><div class="icon-star"></div><div
+                class="icon-star"></div><div class="icon-graystar"></div>
+								<span class="value show-for-medium">
+										4/5
+									</span>
+								<span class="count show-for-medium">
+										161 votes
+									</span>
+							</span>
+						</span>
+          <span data-smoothscroll="#comments" class="smoothScroll pointer">Commentaires <b>(11)</b></span>
+        </div>
+
+        <div class="row profile">
+          <div>
+            <img class="profileBubble small" src="//static.cuisineaz.com/112x112/default.jpg"
+                 style="border-width:0px;">
+          </div>
+          <div class="author">
+            Par Aurélien de Paris
+          </div>
+          <div id="ctl00_ContentPlaceHolder_BlocUser_userLinks" class="txtright pt10">
+          </div>
+        </div>
+
+
+        <p class="row">
+          {{recipe.description.description}}
+        </p>
+      </div>
+    </section>
+
+
+    <section class="row" style="margin-top: 3rem">
+      <div class="col-md-12 mt5">
+        <h2 class="titleBackGrey mb5">Guide de préparation : {{recipe.name}}</h2>
+        <ul class="menu expanded inline-datas">
+          <li class="icon_level has-tip top" title="Difficulty" data-tooltip="" aria-haspopup="true">
+            <span>{{recipe.description.difficulty}}</span>
+          </li>
+          <li class="icon_people has-tip top" title="Number of people" data-tooltip="" aria-haspopup="true">
+            <span>{{recipe.description.people}} People</span>
+          </li>
+          <li class="icon_preparation has-tip top" title="Preparation"
+              data-tooltip="" aria-haspopup="true">
+            <span>{{recipe.description.preparation}} min</span>
+          </li>
+          <li class="icon_cooking has-tip top" title="Cooking"
+              data-tooltip="" aria-haspopup="true">
+            <span>{{recipe.description.cooking}} min</span>
+          </li>
+          <li class="icon_total has-tip top" title="Total"
+              data-tooltip="" aria-haspopup="true">
+            <span>{{recipe.description.total}} min</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="row">
+      <section class="col-md-3 recipe_ingredients">
+        <h3 class="titleBackGrey mb0">Ingrédients</h3>
+        <ul>
+          <li><span>250 g de farine de blé</span></li>
+          <li><span>½ l de lait</span></li>
+          <li><span>3 œufs</span></li>
+          <li><span>1 c. à soupe d’huile</span></li>
+          <li><span>1 pincée de sel</span></li>
+          <li><span>1 ou 2 c. à soupe d’eau</span></li>
+        </ul>
+      </section>
+      <section class="col-md-9 recipe_instructions">
+        <div id="preparation">
+          <h3 class="titleBackGrey mb5">Préparation</h3>
+          <div data-ng-repeat="item in recipe.description.steps track by item.index">
+              <p class="p10"><span class="dblock bold txt-dark-gray">Step {{item.index}}</span>{{item.value}}
+          </div>
+        </div>
+      </section>
+    </div>
+  </article>
 </div>

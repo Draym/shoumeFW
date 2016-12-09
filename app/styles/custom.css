@@ -82,3 +82,7 @@
 .register .left { float: left; }
 
 .register .right { float: right; }
+
+.modal-body {
+  display: flex;
+}

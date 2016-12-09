@@ -1,5 +1,13 @@
-<p>This is the myRecipes view.</p>
-
-<div ng-repeat="recipe in myRecipes">
-  <a href="#/recipe/{{recipe.id}}">Check recipe {{recipe.name}}</a>
+<div>
+  <div class="text-right">
+    <button type="button" class="btn btn btn-primary"
+            data-ng-click="openAddRecipeModal()"><i class="fa fa-plus-circle"></i> Recipe
+    </button>
+  </div><br>
+  <div ng-repeat="recipe in myRecipes">
+    <div class="div-block">
+      <a class="title-link" href="#/recipe/{{recipe.id}}"><h4>{{recipe.name}}</h4></a><hr>
+      <span>{{recipe.description.description}}</span>
+    </div><br>
+  </div>
 </div>

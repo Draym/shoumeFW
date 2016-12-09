@@ -11,9 +11,14 @@ angular.module('shoumeApp')
   .controller('RecipeCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, TokenManager) {
     $scope.id = $routeParams.id;
 
-    $scope.init = function() {
+    $scope.init = function () {
       RequestAPI.GET("/recipe/" + $scope.id, SubmitResult.submitSuccess(function (response) {
           $scope.recipe = response.data;
+          try {
+            $scope.recipe.description = JSON.parse($scope.recipe.description);
+            $scope.recipe.description.total = $scope.recipe.description.preparation + $scope.recipe.description.cooking;
+            console.log($scope.recipe);
+          } catch (e) {}
           RequestAPI.GET("/recipe/" + $scope.recipe.id + "/comments", SubmitResult.submitSuccess(function (response) {
               $scope.comments = response.data;
             }),

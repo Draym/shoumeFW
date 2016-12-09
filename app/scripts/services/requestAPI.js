@@ -14,7 +14,7 @@ angular.module('shoumeApp')
     $httpProvider.defaults.headers.put = {};
     $httpProvider.defaults.headers.patch = {};
   }])
-  .factory('RequestAPI', function ($http) {
+  .factory('RequestAPI', function ($http, TokenManager) {
     // Service logic
     // ...
 
@@ -22,6 +22,9 @@ angular.module('shoumeApp')
     // Public API here
     return {
       POST: function (url, data, success, failure, token) {
+        if (token) {
+          TokenManager.put(token);
+        }
         $http({
           method: 'POST',
           url:  api_url + url + (token != null ? "?token=" + token : ""),
@@ -51,6 +54,9 @@ angular.module('shoumeApp')
         );
       },
       GET: function (url, success, failure, token) {
+        if (token) {
+          TokenManager.put(token);
+        }
         $http({
           method: 'GET',
           url: api_url + url + (token != null ? "?token=" + token : ""),
