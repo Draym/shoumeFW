@@ -86,3 +86,19 @@
 .modal-body {
   display: flex;
 }
+
+.label-light {
+  background-color: #81DAF5;
+}
+
+.label-medium {
+  background-color: #64a7b2;
+}
+
+.label-grey {
+  background-color: #647882;
+}
+
+.form-space {
+  margin-bottom: 5px;
+}

@@ -17,6 +17,7 @@ angular.module('shoumeApp')
           try {
             $scope.recipe.description = JSON.parse($scope.recipe.description);
             $scope.recipe.description.total = $scope.recipe.description.preparation + $scope.recipe.description.cooking;
+            $scope.recipe.tags = ["tutu", "titi", "tata", "toto"]
             console.log($scope.recipe);
           } catch (e) {}
           RequestAPI.GET("/recipe/" + $scope.recipe.id + "/comments", SubmitResult.submitSuccess(function (response) {

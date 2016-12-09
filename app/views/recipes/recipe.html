@@ -68,7 +68,11 @@
 
     <section class="row" style="margin-top: 3rem">
       <div class="col-md-12 mt5">
-        <h2 class="titleBackGrey mb5">Guide de préparation : {{recipe.name}}</h2>
+        <h2 class="titleBackGrey mb5">Guide de préparation : {{recipe.name}}
+          <span data-ng-repeat="item in recipe.tags track by $index" class="pull-right" style="display: flex; margin-right: 2px">
+            <span class="label label-info label-medium">{{item}}</span>
+          </span>
+        </h2>
         <ul class="menu expanded inline-datas">
           <li class="icon_level has-tip top" title="Difficulty" data-tooltip="" aria-haspopup="true">
             <span>{{recipe.description.difficulty}}</span>

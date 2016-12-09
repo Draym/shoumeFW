@@ -15,19 +15,33 @@ angular.module('shoumeApp')
     $scope.isBusy = false;
     $scope.recipe = {
       name: "",
-      description: {description: "", difficulty: "", preparation: 0, cooking: 0, people: 0, steps:[]},
+      description: {description: "", difficulty: "", preparation: 0, cooking: 0, people: 0, steps: []},
       image: "",
-      ingredients: []
+      ingredients: [],
+      tags: []
     };
 
-    $scope.addStep = function() {
+    $scope.addTag = function () {
+      if ($scope.tag) {
+        $scope.recipe.tags.push($scope.tag);
+        $scope.tag = "";
+      }
+    };
+
+    $scope.addIngredient = function() {
+
+    };
+
+    $scope.addStep = function () {
       $scope.recipe.description.steps.push({index: $scope.recipe.description.steps.length + 1, value: ""});
     };
 
-    $scope.removeStep = function(index) {
-      $scope.recipe.description.steps.splice(index, 1);
-      for (var i = 0; i < $scope.recipe.description.steps.length; ++i) {
-        $scope.recipe.description.steps[i].index = i + 1;
+    $scope.removeStep = function (index) {
+      if ($scope.recipe.description.steps.length > 1) {
+        $scope.recipe.description.steps.splice(index, 1);
+        for (var i = 0; i < $scope.recipe.description.steps.length; ++i) {
+          $scope.recipe.description.steps[i].index = i + 1;
+        }
       }
     };
 

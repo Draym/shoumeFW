@@ -7,7 +7,21 @@
   <div class="modal-body">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-ng-class="{ 'has-error' : editForm.name.$invalid && !editForm.name.$pristine }">
+          <div class="well well-sm">
+            <div class="form-group">
+              <label class="control-label" for="field_name">Name<i style="color: red">*</i></label>
+              <input type="text" class="form-control" name="name" id="field_name"
+                     data-ng-model="recipe.name"
+                     placeholder="ex. Chocolate cake"
+                     required/>
+              <p data-ng-show="editForm.name.$invalid && !editForm.name.$pristine" class="help-block">A name is
+                needed.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
           <div data-flow-init data-flow-files-submitted="$flow.upload()"
                data-flow-file-added="$flow.files.length < 1 && !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
                data-flow-name="flow.content"
@@ -49,31 +63,37 @@
             </div>
           </div>
         </div>
-
-        <div class="col-md-6" data-ng-class="{ 'has-error' : editForm.name.$invalid && !editForm.name.$pristine }">
-          <div class="well well-sm">
-            <div class="form-group">
-              <label class="control-label" for="field_name">Name<i style="color: red">*</i></label>
-              <input type="text" class="form-control" name="name" id="field_name"
-                     data-ng-model="recipe.name"
-                     placeholder="ex. Chocolate cake"
-                     required/>
-              <p data-ng-show="editForm.name.$invalid && !editForm.name.$pristine" class="help-block">A name is
-                needed.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <h2>Ingredients</h2>
           <div class="row">
+            <div class="col-md-12" style="display: flex">
+              <label class="control-label" for="field_quantity"></label>
+              <input class="form-control" name="quantity" data-ng-model="ingredient.quantity" type="text"
+                     id="field_quantity" placeholder="quantity"
+                     style="width: 20%">
+              <label class="control-label" for="field_unit"></label>
+              <input class="form-control" name="unit" data-ng-model="ingredient.unit" type="text"
+                     id="field_unit" placeholder="(u)"
+                     style="width: 15%; margin-left: 2px">
+              <label class="control-label" for="field_ingredient"></label>
+              <input class="form-control" name="ingredient" data-ng-model="ingredient.id" type="text"
+                     id="field_ingredient" placeholder="ingredient"
+                     style="width: 60%; margin-left: 6px">
+              <button class="btn btn-secondary pull-right" data-ng-click="addIngredient()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
 
           </div>
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
           <h2>Preparation</h2>
           <form class="form-horizontal" role="form">
             <div class="row form-group">
@@ -125,23 +145,37 @@
         </div>
       </div>
 
-      <h2>Description<i style="color: red">*</i></h2>
+      <h2 style="padding-top: 20px">Description<i style="color: red">*</i></h2>
+      <div data-ng-repeat="item in recipe.tags track by $index" style="display: inline">
+        <span class="label label-info">{{item}}</span>
+      </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="form-group"
+          <div class="form-space"
                data-ng-class="{ 'has-error' : editForm.description.$invalid && !editForm.description.$pristine }">
             <label class="control-label" for="field_description"></label>
             <textarea class="form-control" name="description" id="field_description"
                       style="height: 80px; resize: vertical"
                       data-ng-model="recipe.description.description"
-                      placeholder="description..."
+                      placeholder="description.."
                       required
             ></textarea>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12" style="display: flex">
+          <label class="control-label" for="field_tag" style="padding-top: 5px">Add tag:</label>
+          <input class="form-control" name="tag" data-ng-model="tag" type="text"
+                 id="field_tag" placeholder="name.."
+                 style="width: 20%; margin-left: 10px">
+          <button class="btn btn-secondary pull-right" data-ng-click="addTag()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
 
-      <h2>Steps<i style="color: red">*</i></h2>
+      <h2 style="padding-top: 20px">Steps<i style="color: red">*</i></h2>
       <div class="row">
         <div class="col-md-12">
           <div data-ng-repeat="item in recipe.description.steps track by item.index">
@@ -153,7 +187,7 @@
             <textarea class="form-control" name="description" id="field_step"
                       style="height: 80px; resize: vertical"
                       data-ng-model="item.value"
-                      placeholder="description..."
+                      placeholder="description.."
                       required
             >
             </textarea>
@@ -162,13 +196,16 @@
       </div>
       <div class="row">
         <div class="col-md-12" style="margin-top: 10px">
-          <button class="btn btn-info pull-right" data-ng-click="addStep()">add step</button>
+          <button class="btn btn-info pull-right" data-ng-click="addStep()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal" data-ng-disabled="isBusy" data-ng-click="clear()">
+    <button type="button" class="btn btn-default" data-dismiss="modal" data-ng-disabled="isBusy"
+            data-ng-click="clear()">
       <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
     </button>
     <button data-ng-click="save()" data-ng-disabled="editForm.$invalid || isBusy" class="btn btn-primary">
