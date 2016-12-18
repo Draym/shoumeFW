@@ -68,10 +68,10 @@
       <div class="row">
         <div class="col-md-6">
           <h2>Ingredients</h2>
-          <div style="display: flex">
+          <div class="noArrow" style="display: flex">
             <label class="control-label" for="field_quantity"></label>
             <input class="form-control" name="quantity" data-ng-model="quantity"
-                   type="text"
+                   type="number"
                    data-ng-min="0"
                    id="field_quantity" placeholder="quantity"
                    style="width: 20%; margin-top: 3px">
@@ -87,7 +87,8 @@
                     id="field_ingredient"
                     placeholder="ingredient"
                     style="width: 60%; margin-left: 6px"></select>
-            <button class="btn btn-secondary pull-right" data-ng-click="addIngredient()">
+            <button class="btn btn-secondary pull-right" data-ng-click="addIngredient()"
+                    style="margin-left: 2px">
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
           </div>
@@ -125,7 +126,7 @@
           <h2>Preparation</h2>
           <form class="form-horizontal" role="form">
             <div class="row form-group">
-              <label class="col-md-4 control-label icon_level" for="field_difficulty">Difficulty<i
+              <label class="col-md-5 control-label icon_level" for="field_difficulty">Difficulty<i
                 style="color: red">*</i></label>
               <div class="col-md-5">
                 <select class="form-control" data-ng-model="recipe.description.difficulty"
@@ -140,7 +141,7 @@
             </div>
             <div class="row form-group"
                  data-ng-class="{ 'has-error' : editForm.preparation.$invalid && !editForm.preparation.$pristine }">
-              <label class="col-md-4 control-label icon_preparation" for="field_preparation">Preparation<i
+              <label class="col-md-5 control-label icon_preparation" for="field_preparation">Preparation<i
                 style="color: red">*</i></label>
               <div class="col-md-5">
                 <input class="form-control" name="preparation" data-ng-model="recipe.description.preparation"
@@ -151,7 +152,7 @@
             </div>
             <div class="row form-group"
                  data-ng-class="{ 'has-error' : editForm.cooking.$invalid && !editForm.cooking.$pristine }">
-              <label class="col-md-4 control-label icon_cooking" for="field_cooking">Cooking<i
+              <label class="col-md-5 control-label icon_cooking" for="field_cooking">Cooking<i
                 style="color: red">*</i></label>
               <div class="col-md-5">
                 <input class="form-control" name="cooking" data-ng-model="recipe.description.cooking" type="number"
@@ -161,7 +162,7 @@
             </div>
             <div class="row form-group"
                  data-ng-class="{ 'has-error' : editForm.people.$invalid && !editForm.people.$pristine }">
-              <label class="col-md-4 control-label icon_people" for="field_people">People<i
+              <label class="col-md-5 control-label icon_people" for="field_people">People<i
                 style="color: red">*</i></label>
               <div class="col-md-5">
                 <input class="form-control" name="people" data-ng-model="recipe.description.people" type="number"
@@ -197,7 +198,8 @@
           <input class="form-control" name="tag" data-ng-model="tag" type="text"
                  id="field_tag" placeholder="name.."
                  style="width: 20%; margin-left: 10px">
-          <button class="btn btn-secondary pull-right" data-ng-click="addTag()">
+          <button class="btn btn-secondary pull-right" data-ng-click="addTag()"
+                  style="margin-left: 1px">
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
         </div>

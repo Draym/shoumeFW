@@ -32,7 +32,6 @@ angular.module('shoumeApp')
     };
 
     $scope.addIngredient = function () {
-      console.log($scope.myIngredient)
       if ($scope.ingredients) {
         for (var i = 0; i < $scope.ingredients.length; ++i) {
           if ($scope.ingredients[i].id == $scope.myIngredient) {
@@ -40,7 +39,6 @@ angular.module('shoumeApp')
           }
         }
       }
-      console.log($scope.myIngredients)
     };
 
     $scope.removeIngredient = function (index) {
@@ -56,11 +54,9 @@ angular.module('shoumeApp')
         $scope.myIngredients[index] = tmp;
       }
       else if (mode == "up" && index != 0) {
-        console.log("before:", $scope.myIngredients)
         tmp = $scope.myIngredients[index - 1];
         $scope.myIngredients[index - 1] = $scope.myIngredients[index];
         $scope.myIngredients[index] = tmp;
-        console.log("after: ", $scope.myIngredients)
       }
     };
 

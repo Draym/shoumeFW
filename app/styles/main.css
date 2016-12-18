@@ -355,3 +355,13 @@ body {
 .txtright {
   text-align: right;
 }
+
+.noArrow form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.noArrow input[type="number"] {
+  -moz-appearance: textfield;
+}
