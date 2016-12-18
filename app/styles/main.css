@@ -148,6 +148,7 @@ body{padding-top:20px;}
 
 .div-block {
   padding: 20px;
+  display: flex;
   background: #F4F4F4;
 }
 

@@ -102,3 +102,40 @@
 .form-space {
   margin-bottom: 5px;
 }
+
+.img-list {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.selector-custom {
+  background-color: white !important;
+}
+
+.selector-custom .selector-helper {
+  display: none !important;
+}
+
+.overList tbody{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+}
+.overList tr {
+  width: 100%;
+  display: inline-table;
+}
+
+.customTab {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.buttonLike:hover {
+  color: darkgray;
+  cursor: pointer;
+}

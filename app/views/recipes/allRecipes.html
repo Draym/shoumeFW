@@ -1,9 +1,20 @@
 <div>
-	<h3>All recipes</h3><br>
-	<div ng-repeat="recipe in recipes">
-		<div class="div-block">
-			<a class="title-link" href="#/recipe/{{recipe.id}}"><h4>{{recipe.name}}</h4></a><hr>
-			<span>{{recipe.description.description}}</span>
-		</div><br>
-	</div>
+  <h3>All recipes</h3><br>
+  <div data-ng-repeat="recipe in recipes">
+    <div class="row div-block">
+      <div id="recipeLeft">
+        <div id="ctl00_ContentPlaceHolder_visu_recette" class="collapse-small">
+          <img id="shareimg" class="img-list"
+               src="//static.cuisineaz.com/240x192/i79722-la-meilleure-pate-a-crepes-du-monde.jpg"
+               alt="La meilleure pâte à crêpes du monde" style="border-width:0;">
+        </div>
+      </div>
+      <div>
+        <a class="title-link" href="#/recipe/{{recipe.id}}"><h4>{{recipe.name}}</h4></a>
+        <hr>
+        <span>{{recipe.description.description}}</span>
+      </div>
+    </div>
+    <br>
+  </div>
 </div>

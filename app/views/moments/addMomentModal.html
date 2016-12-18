@@ -22,12 +22,12 @@
         </div>
       </div>
 
-      <h2>Content</h2>
+      <h2>Content<i style="color: red">*</i></h2>
       <div class="row">
         <div class="col-md-12">
           <div class="form-group"
                data-ng-class="{ 'has-error' : editForm.content.$invalid && !editForm.content.$pristine }">
-            <label class="control-label" for="field_content">content</label><i style="color: red">*</i>
+            <label class="control-label" for="field_content"></label>
             <textarea class="form-control" name="content" id="field_content" style="height: 150px; resize: vertical"
                       data-ng-model="moment.content"
                       placeholder="content.."

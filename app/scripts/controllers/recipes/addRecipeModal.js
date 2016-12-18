@@ -12,6 +12,9 @@ angular.module('shoumeApp')
     $scope.flow = {};
     $scope.uploader = new FileUploader();
 
+    $scope.ingredientsStock = [];
+    $scope.myIngredients = [];
+
     $scope.isBusy = false;
     $scope.recipe = {
       name: "",
@@ -28,8 +31,37 @@ angular.module('shoumeApp')
       }
     };
 
-    $scope.addIngredient = function() {
+    $scope.addIngredient = function () {
+      console.log($scope.myIngredient)
+      if ($scope.ingredients) {
+        for (var i = 0; i < $scope.ingredients.length; ++i) {
+          if ($scope.ingredients[i].id == $scope.myIngredient) {
+            $scope.myIngredients.push({quantity: $scope.quantity, unit: $scope.unit, value: $scope.ingredients[i]});
+          }
+        }
+      }
+      console.log($scope.myIngredients)
+    };
 
+    $scope.removeIngredient = function (index) {
+      $scope.myIngredients.splice(index, 1);
+    };
+
+    $scope.moveIngredient = function (index, mode) {
+      var tmp;
+
+      if (mode == "down" && index != $scope.myIngredients.length - 1) {
+        tmp = $scope.myIngredients[index + 1];
+        $scope.myIngredients[index + 1] = $scope.myIngredients[index];
+        $scope.myIngredients[index] = tmp;
+      }
+      else if (mode == "up" && index != 0) {
+        console.log("before:", $scope.myIngredients)
+        tmp = $scope.myIngredients[index - 1];
+        $scope.myIngredients[index - 1] = $scope.myIngredients[index];
+        $scope.myIngredients[index] = tmp;
+        console.log("after: ", $scope.myIngredients)
+      }
     };
 
     $scope.addStep = function () {
@@ -45,7 +77,26 @@ angular.module('shoumeApp')
       }
     };
 
-    $scope.addStep();
+    $scope.loadIngredients = function () {
+      RequestAPI.GET("/ingredients", SubmitResult.submitSuccess(function (response) {
+          $scope.ingredients = response.data;
+
+          try {
+            for (var i = 0; i < $scope.ingredients.length; ++i) {
+              $scope.ingredientsStock.push({value: $scope.ingredients[i].id, label: $scope.ingredients[i].name});
+            }
+          } catch (e) {
+          }
+        }),
+        SubmitResult.submitFailure(), TokenManager.get());
+    };
+
+    var loadAll = function () {
+
+      $scope.addStep();
+      $scope.loadIngredients();
+    };
+
 
     $scope.save = function () {
       $scope.isBusy = true;
@@ -70,4 +121,6 @@ angular.module('shoumeApp')
     $scope.clear = function () {
       $uibModalInstance.dismiss('cancel');
     };
+
+    loadAll();
   });
