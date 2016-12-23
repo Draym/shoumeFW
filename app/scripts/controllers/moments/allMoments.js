@@ -8,14 +8,14 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AllMomentsCtrl', function ($scope, toaster, SubmitResult, RequestAPI, TokenManager) {
+  .controller('AllMomentsCtrl', function ($scope, toaster, SubmitResult, RequestAPI, User) {
     $scope.idMoment = 9;
 
     $scope.init = function () {
       RequestAPI.GET("/moments", SubmitResult.submitSuccess(function (response) {
           $scope.moments = response.data;
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.init();

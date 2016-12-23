@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AddMomentModalCtrl', function ($scope, $uibModalInstance, RequestAPI, SubmitResult, TokenManager, FileUploader) {
+  .controller('AddMomentModalCtrl', function ($scope, $uibModalInstance, RequestAPI, SubmitResult, User, FileUploader) {
     $scope.flow = {};
     $scope.isBusy = false;
 
@@ -19,14 +19,14 @@ angular.module('shoumeApp')
        RequestAPI.POST("/upload", $scope.flow.content.files[0].file, SubmitResult.submitSuccess(function (response) {
        console.log("YEAH: ", response);
        }),
-       SubmitResult.submitFailure(), TokenManager.get());
+       SubmitResult.submitFailure(), User.getToken());
        */
       RequestAPI.POST("/moment", $scope.moment, SubmitResult.submitSuccess(function (response) {
           $scope.init();
           $scope.clear();
           $scope.isBusy = false;
         }, "Moment created"),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.uploader = new FileUploader();

@@ -8,13 +8,13 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MyMomentsCtrl', function ($scope, $uibModal, toaster, User, SubmitResult, RequestAPI, TokenManager) {
+  .controller('MyMomentsCtrl', function ($scope, $uibModal, toaster, User, SubmitResult, RequestAPI) {
 
     $scope.init = function () {
       RequestAPI.GET("/user/" + User.getId() + "/moments", SubmitResult.submitSuccess(function (response) {
           $scope.myMoments = response.data;
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.openAddMomentModal = function() {

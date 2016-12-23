@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MyAccountCtrl', function ($scope, toaster, User, SubmitResult, RequestAPI, TokenManager, CloneUtilsCustom) {
+  .controller('MyAccountCtrl', function ($scope, toaster, User, SubmitResult, RequestAPI, CloneUtilsCustom) {
     $scope.change = {};
 
     $scope.initChanges = function () {
@@ -21,7 +21,7 @@ angular.module('shoumeApp')
           $scope.user = response.data;
           $scope.initChanges();
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     var checkChanges = function () {
@@ -47,7 +47,7 @@ angular.module('shoumeApp')
       RequestAPI.POST("/user", $scope.user, SubmitResult.submitSuccess(function (response) {
           $scope.initChanges();
         }, "Profile updated !"),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.cancelChanges = function () {

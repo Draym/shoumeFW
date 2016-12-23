@@ -1,13 +1,22 @@
 <div>
-	<div class="text-right">
-	<button type="button" class="btn btn btn-primary"
-        data-ng-click="openAddMomentModal()"><i class="fa fa-plus-circle"></i> Moment
-	</button>
-	</div><br>
-	<div ng-repeat="moment in myMoments">
-		<div class="div-block">
-			<a class="title-link" href="#/moment/{{moment.id}}"><h4>{{moment.title}}</h4></a><hr>
-			<span>{{moment.content}}</span>
-		</div><br>
-	</div>
+  <div class="text-right">
+    <button type="button" class="btn btn btn-primary"
+            data-ng-click="openAddMomentModal()"><i class="fa fa-plus-circle"></i> Moment
+    </button>
+  </div>
+  <br>
+  <table class="table table-striped customTab">
+    <tr data-ng-repeat="moment in myMoments track by $index" href="#/moment/{{moment.id}}">
+
+    </tr>
+  </table>
+
+  <div data-ng-repeat="moment in myMoments">
+    <div class="div-block">
+      <a class="title-link" href="#/moment/{{moment.id}}"><h4>{{moment.title}}</h4></a>
+      <hr>
+      <span>{{moment.content}}</span>
+    </div>
+    <br>
+  </div>
 </div>

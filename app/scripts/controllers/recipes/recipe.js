@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('RecipeCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, TokenManager) {
+  .controller('RecipeCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, User) {
     $scope.id = $routeParams.id;
 
     $scope.init = function () {
@@ -23,9 +23,9 @@ angular.module('shoumeApp')
           RequestAPI.GET("/recipe/" + $scope.recipe.id + "/comments", SubmitResult.submitSuccess(function (response) {
               $scope.comments = response.data;
             }),
-            SubmitResult.submitFailure(), TokenManager.get());
+            SubmitResult.submitFailure(), User.getToken());
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.init();

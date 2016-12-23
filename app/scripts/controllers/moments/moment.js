@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MomentCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, TokenManager) {
+  .controller('MomentCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, User) {
     $scope.id = $routeParams.id;
     $scope.comment = {};
 
@@ -18,9 +18,9 @@ angular.module('shoumeApp')
           RequestAPI.GET("/moment/" + $scope.moment.id + "/comments", SubmitResult.submitSuccess(function (response) {
               $scope.comments = response.data;
             }),
-            SubmitResult.submitFailure(), TokenManager.get());
+            SubmitResult.submitFailure(), User.getToken());
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.closeReply = function() {
@@ -38,7 +38,7 @@ angular.module('shoumeApp')
     $scope.sendReply = function() {
       console.log("comment: ", $scope.comment);
       RequestAPI.POST("/moment/" + $scope.moment.id + "/comment", $scope.comment, SubmitResult.submitSuccess("comment send"),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
     $scope.init();
   });

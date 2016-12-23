@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MyRecipesCtrl', function ($scope, $uibModal, toaster, User, SubmitResult, RequestAPI, TokenManager) {
+  .controller('MyRecipesCtrl', function ($scope, $uibModal, toaster, User, SubmitResult, RequestAPI) {
 
     $scope.init = function () {
       RequestAPI.GET("/user/" + User.getId() + "/recipes", SubmitResult.submitSuccess(function (response) {
@@ -19,7 +19,7 @@ angular.module('shoumeApp')
             }
           } catch (e) {}
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
 

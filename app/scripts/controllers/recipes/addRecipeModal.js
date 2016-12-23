@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AddRecipeModalCtrl', function ($scope, $uibModalInstance, RequestAPI, SubmitResult, TokenManager, FileUploader, CloneUtilsCustom) {
+  .controller('AddRecipeModalCtrl', function ($scope, $uibModalInstance, RequestAPI, SubmitResult, User, FileUploader, CloneUtilsCustom) {
     $scope.flow = {};
     $scope.uploader = new FileUploader();
 
@@ -84,7 +84,7 @@ angular.module('shoumeApp')
           } catch (e) {
           }
         }),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     var loadAll = function () {
@@ -101,7 +101,7 @@ angular.module('shoumeApp')
        RequestAPI.POST("/upload", $scope.flow.content.files[0].file, SubmitResult.submitSuccess(function (response) {
        console.log("YEAH: ", response);
        }),
-       SubmitResult.submitFailure(), TokenManager.get());
+       SubmitResult.submitFailure(), User.getToken());
        */
       var recipeFormat = CloneUtilsCustom.cloneObject($scope.recipe);
       recipeFormat.description = JSON.stringify(recipeFormat.description);
@@ -111,7 +111,7 @@ angular.module('shoumeApp')
           $scope.clear();
           $scope.isBusy = false;
         }, "Recipe created"),
-        SubmitResult.submitFailure(), TokenManager.get());
+        SubmitResult.submitFailure(), User.getToken());
     };
 
     $scope.clear = function () {

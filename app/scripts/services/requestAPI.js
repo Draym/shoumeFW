@@ -14,7 +14,7 @@ angular.module('shoumeApp')
     $httpProvider.defaults.headers.put = {};
     $httpProvider.defaults.headers.patch = {};
   }])
-  .factory('RequestAPI', function ($http, TokenManager) {
+  .factory('RequestAPI', function ($http, User) {
     // Service logic
     // ...
 
@@ -23,7 +23,7 @@ angular.module('shoumeApp')
     return {
       POST: function (url, data, success, failure, token) {
         if (token) {
-          TokenManager.put(token);
+          User.update(token);
         }
         $http({
           method: 'POST',
@@ -55,7 +55,7 @@ angular.module('shoumeApp')
       },
       GET: function (url, success, failure, token) {
         if (token) {
-          TokenManager.put(token);
+          User.update(token);
         }
         $http({
           method: 'GET',

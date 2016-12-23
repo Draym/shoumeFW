@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MainCtrl', function ($scope, TokenManager) {
+  .controller('MainCtrl', function ($scope, User) {
 
-    console.log("Salut: ", TokenManager.get());
+    console.log("Salut: ", User.getToken());
   });
