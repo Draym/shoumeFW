@@ -24,6 +24,7 @@
         <div class="col-md-5">
           <div data-flow-init data-flow-files-submitted="$flow.upload()"
                data-flow-file-added="$flow.files.length < 1 && !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+               data-flow-files-added="limitFiles($files, 1)"
                data-flow-name="flow.content"
                class="ng-scope">
             <div class="drop" data-flow-drop="" data-ng-class="dropClass">

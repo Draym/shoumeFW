@@ -29,6 +29,12 @@ angular.module('shoumeApp')
         SubmitResult.submitFailure(), User.getToken());
     };
 
+    $scope.limitFiles = function($files, max) {
+      if ($files.length > max) {
+        $files.length = max;
+      }
+    };
+
     $scope.uploader = new FileUploader();
 
     $scope.checkImg = function () {

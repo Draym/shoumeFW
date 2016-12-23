@@ -114,6 +114,12 @@ angular.module('shoumeApp')
         SubmitResult.submitFailure(), User.getToken());
     };
 
+    $scope.limitFiles = function($files, max) {
+      if ($files.length > max) {
+        $files.length = max;
+      }
+    };
+
     $scope.clear = function () {
       $uibModalInstance.dismiss('cancel');
     };
