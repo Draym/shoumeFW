@@ -1,24 +1,151 @@
 <div>
-  <div class="text-right">
-    <button type="button" class="btn btn btn-primary"
-            data-ng-click="openAddRecipeModal()"><i class="fa fa-plus-circle"></i> Recipe
-    </button>
-  </div><br>
-  <div data-ng-repeat="recipe in myRecipes">
-    <div class="row div-block">
-      <div id="recipeLeft">
-        <div id="ctl00_ContentPlaceHolder_visu_recette" class="collapse-small">
-          <img id="shareimg" class="img-list"
-               src="//static.cuisineaz.com/240x192/i79722-la-meilleure-pate-a-crepes-du-monde.jpg"
-               alt="La meilleure pâte à crêpes du monde" style="border-width:0;">
-        </div>
-      </div>
-      <div>
-        <a class="title-link" href="#/recipe/{{recipe.id}}"><h4>{{recipe.name}}</h4></a>
-        <hr>
-        <span>{{recipe.description.description}}</span>
+  <div class="row col-md-12">
+    <div class="col-md-3">
+      <div class="form-inline" style="padding-left: 5px; margin-bottom: 10px">
+        <label for="name">Search : </label>
+        <input type="text" name="path" id="name" class="form-control"
+               value="" data-ng-model="searchName" placeholder="name">
       </div>
     </div>
-    <br>
+    <div class="col-md-3">
+      <div class="form-inline" style="padding-left: 5px; margin-bottom: 10px">
+        <label for="tag">Tags : </label>
+        <input type="text" name="path" id="tag" class="form-control"
+               value="" data-ng-model="searchTag" placeholder="tag">
+      </div>
+    </div>
+  </div>
+  <div class="row col-md-12" style="margin-top:4%">
+    <div class="col-md-6">
+      <div data-ng-repeat="recipe in pagedItems[currentPage] track by $index"
+           data-ng-if="$index < (pagedItems[currentPage].length / 2)">
+        <div class="row col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="display: flex">
+              <div class="col-md-3">
+                <div class="collapse-small">
+                  <img class="img-list"
+                       src="{{recipe.thumbnail}}" style="border-width:0;">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div>
+                  <a class="title-link" href="#/recipe/{{recipe.id}}"><h4>{{recipe.name}}</h4></a>
+                </div>
+              </div>
+              <div class="col-md-5">
+            <span data-ng-repeat="item in recipe.tags track by $index" class="pull-right"
+                  style="display: flex; margin-right: 2px">
+            <span class="label label-info label-medium">{{item}}</span>
+          </span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="modal-header" data-ng-if="!recipe.low">
+                <ul class="menu expanded inline-datas">
+                  <li class="icon_level has-tip top" title="Difficulty" data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.difficulty}}</span>
+                  </li>
+                  <li class="icon_people has-tip top" title="Number of people" data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.people}} People</span>
+                  </li>
+                  <li class="icon_preparation has-tip top" title="Preparation"
+                      data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.preparation}} min</span>
+                  </li>
+                  <li class="icon_cooking has-tip top" title="Cooking"
+                      data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.cooking}} min</span>
+                  </li>
+                  <li class="icon_total has-tip top" title="Total"
+                      data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.total}} min</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-body" style="display: flex">
+                <span data-ng-if="recipe.low">{{recipe.description}}</span>
+                <span data-ng-if="!recipe.low">{{recipe.description.description}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div data-ng-repeat="recipe in pagedItems[currentPage] track by $index"
+           data-ng-if="$index >= (pagedItems[currentPage].length / 2)">
+        <div class="row col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="display: flex">
+              <div class="col-md-3">
+                <div class="collapse-small">
+                  <img class="img-list"
+                       src="{{recipe.thumbnail}}" style="border-width:0;">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div>
+                  <a class="title-link" href="#/recipe/{{recipe.id}}"><h4>{{recipe.name}}</h4></a>
+                </div>
+              </div>
+              <div class="col-md-5">
+            <span data-ng-repeat="item in recipe.tags track by $index" class="pull-right"
+                  style="display: flex; margin-right: 2px">
+            <span class="label label-info label-medium">{{item}}</span>
+          </span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="modal-header" data-ng-if="!recipe.low">
+                <ul class="menu expanded inline-datas">
+                  <li class="icon_level has-tip top" title="Difficulty" data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.difficulty}}</span>
+                  </li>
+                  <li class="icon_people has-tip top" title="Number of people" data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.people}} People</span>
+                  </li>
+                  <li class="icon_preparation has-tip top" title="Preparation"
+                      data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.preparation}} min</span>
+                  </li>
+                  <li class="icon_cooking has-tip top" title="Cooking"
+                      data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.cooking}} min</span>
+                  </li>
+                  <li class="icon_total has-tip top" title="Total"
+                      data-tooltip="" aria-haspopup="true">
+                    <span>{{recipe.description.total}} min</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-body" style="display: flex">
+                <span data-ng-if="recipe.low">{{recipe.description}}</span>
+                <span data-ng-if="!recipe.low">{{recipe.description.description}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row col-md-12" style="padding-right: 60px">
+    <div class="pagination pull-right">
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active"
+               data-ng-class="{disabled: firstPage()}"
+               data-ng-click="prevPage()">
+          <input type="radio" name="options" id="prev" autocomplete="off"> Prev
+        </label>
+        <label class="btn btn-primary active">
+          <input type="radio" name="options" id="current" autocomplete="off"> {{currentPage + 1}}
+        </label>
+        <label class="btn btn-primary active"
+               data-ng-class="{disabled: lastPage()}"
+               data-ng-click="nextPage()">
+          <input type="radio" name="options" id="next" autocomplete="off"> Next
+        </label>
+      </div>
+    </div>
   </div>
 </div>

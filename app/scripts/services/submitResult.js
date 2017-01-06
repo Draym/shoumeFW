@@ -33,11 +33,20 @@ angular.module('shoumeApp')
           }
         };
       },
-      submitFailure : function(optionalMessage) {
+      submitFailure : function(optionalTask, optionalMessage) {
         return function(response) {
-          console.log("Fail:", response);
+          //console.log("Fail:", response);
+          if (!(optionalTask == null)) {
+            if ((typeof optionalTask === "function")) {
+              optionalTask(response);
+            } else if (!optionalMessage) {
+              optionalMessage = optionalTask;
+            }
+          }
+
           if (response.data != null) {
             toaster.error({'body': (response.data.message == null ? response.statusText : response.data.message)});
+
             if (response.data.message != null && response.data.message == "No token provided.") {
               $location.path("/login");
             }

@@ -95,15 +95,14 @@ angular.module('shoumeApp')
 
 
     $scope.save = function () {
-      $scope.isBusy = true;
-      /*
-       console.log("images: ", $scope.flow);
-       RequestAPI.POST("/upload", $scope.flow.content.files[0].file, SubmitResult.submitSuccess(function (response) {
-       console.log("YEAH: ", response);
-       }),
-       SubmitResult.submitFailure(), User.getToken());
-       */
+      //$scope.isBusy = true;
       var recipeFormat = CloneUtilsCustom.cloneObject($scope.recipe);
+
+      recipeFormat.description.total = recipeFormat.description.preparation + recipeFormat.description.cooking;
+      recipeFormat.description.ingredients = [];
+      for (var i = 0; i < $scope.myIngredients.length; ++i) {
+        recipeFormat.description.ingredients.push($scope.myIngredients[i].quantity + " " + $scope.myIngredients[i].unit + " " + $scope.myIngredients[i].value.name);
+      }
       recipeFormat.description = JSON.stringify(recipeFormat.description);
 
       RequestAPI.POST("/recipe", recipeFormat, SubmitResult.submitSuccess(function (response) {
@@ -111,7 +110,9 @@ angular.module('shoumeApp')
           $scope.clear();
           $scope.isBusy = false;
         }, "Recipe created"),
-        SubmitResult.submitFailure(), User.getToken());
+        SubmitResult.submitFailure(function(){
+          $scope.isBusy = false;
+        }), User.getToken());
     };
 
     $scope.limitFiles = function($files, max) {

@@ -26,7 +26,9 @@ angular.module('shoumeApp')
           $scope.clear();
           $scope.isBusy = false;
         }, "Moment created"),
-        SubmitResult.submitFailure(), User.getToken());
+        SubmitResult.submitFailure(function() {
+          $scope.isBusy = false;
+        }), User.getToken());
     };
 
     $scope.limitFiles = function($files, max) {

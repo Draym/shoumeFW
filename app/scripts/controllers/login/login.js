@@ -27,6 +27,8 @@ angular.module('shoumeApp')
           $location.path("/");
           $scope.isBusy = false;
         }, "Connected"),
-        SubmitResult.submitFailure("Connexion Failed"));
+        SubmitResult.submitFailure(function() {
+          $scope.isBusy = false;
+        }, "Connexion Failed"));
     };
   });
