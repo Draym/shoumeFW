@@ -132,6 +132,13 @@ angular.module('shoumeApp')
       RequestAPI.GET("/user/" + User.getId() + "/moments", SubmitResult.submitSuccess(function (response) {
           $scope.unparsedMoments = response.data;
 
+          for (var i = 0; i < $scope.unparsedMoments.length; ++i) {
+            try {
+              $scope.unparsedMoments[i].images = JSON.parse($scope.unparsedMoments[i].image_url);
+            } catch (e) {
+              $scope.unparsedMoments[i].images = [];
+            }
+          }
           $scope.parseUnparsedMoments();
         }),
         SubmitResult.submitFailure(), User.getToken());

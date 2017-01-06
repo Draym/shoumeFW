@@ -24,7 +24,7 @@
   </div>
   <div class="row col-md-12" style="margin-top:4%">
     <div class="panel panel-info" data-ng-repeat="moment in pagedItems[currentPage] track by $index">
-      <div class="panel-heading" style="display: flex" data-ng-click="openDetail(recipe.id)">
+      <div class="panel-heading" style="display: flex" data-ng-click="openDetail(moment.id)">
         <div class="col-md-6">
           <h2>{{moment.title}}</h2>
         </div>

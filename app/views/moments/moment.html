@@ -7,68 +7,77 @@
       <span class="pull-right"><small>{{ moment.date | date:'medium'}}</small></span>
     </div>
   </div>
-  <div class="panel-body" style="display: flex">
-    <div class="row-col-md-12">
+  <div class="panel-body">
+    <div class="modal-header" style="padding-bottom: 4%">
       <span>{{moment.content}}</span>
     </div>
-    <div class="row-col-md-12">
-
+    <div class="modal-body" style="margin-top: 5%; padding-right: 0; display:flex">
+      <div class="col-md-3" style="padding-left: 0;display: flex"
+           data-ng-repeat="image in moment.images track by $index">
+        <div class="center">
+          <img class="img-responsive img-lg" src="{{image}}"/>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <!-- Contenedor Principal -->
-    <div class="comments-container">
-      <h2>Comments</h2>
-      <ul id="comments-list" class="comments-list">
-        <li ng-repeat="comment in comments">
-          <div class="comment-avatar">
-            <img src="{{comment.thumbnail}}" alt="" data-ng-if="comment.thumbnail">
-            <img
-              src="https://tse3-mm.cn.bing.net/th?id=OIP.Mbe732ac7cb83a1ea8ce6692382a363cao0&pid=15.1&P=0&w=300&h=300"
-              alt="" data-ng-if="!comment.thumbnail">
-          </div>
-
-          <div class="comment-box">
-            <div class="comment-head">
-              <div>
-                <h6 class="comment-name">{{comment.owner_login}}</h6>
-                <h6>{{ comment.date | date:'medium'}}</h6>
+    <div style="padding-left: 20px; padding-right: 20px; display: flex">
+      <div class="center well">
+        <!-- Contenedor Principal -->
+        <div>
+          <h2 style="margin-top: 2%">Comments</h2>
+          <ul id="comments-list" class="comments-list">
+            <li ng-repeat="comment in comments">
+              <div class="comment-avatar">
+                <img src="{{comment.thumbnail}}" alt="" data-ng-if="comment.thumbnail">
+                <img
+                  src="https://tse3-mm.cn.bing.net/th?id=OIP.Mbe732ac7cb83a1ea8ce6692382a363cao0&pid=15.1&P=0&w=300&h=300"
+                  alt="" data-ng-if="!comment.thumbnail">
               </div>
-              <i class="fa fa-heart"></i>
-            </div>
-            <div class="comment-content">
-              {{comment.content}}
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="col-md-12">
-        <div class="row">
-          <div data-ng-show="!isReplyingToMoment">
-            <button type="button" class="btn btn btn-info pull-right"
-                    data-ng-click="isReplyingToMoment = true">Reply
-            </button>
-          </div>
 
-        </div>
-        <div class="row" data-ng-if="isReplyingToMoment">
-          <div class="pull-right" style="width:100%">
-            <div style="position:relative;">
+              <div class="comment-box">
+                <div class="comment-head">
+                  <div>
+                    <h6 class="comment-name">{{comment.owner_login}}</h6>
+                    <h6>{{ comment.date | date:'medium'}}</h6>
+                  </div>
+                  <i class="fa fa-heart"></i>
+                </div>
+                <div class="comment-content">
+                  {{comment.content}}
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="col-md-12">
+            <div class="row">
+              <div data-ng-show="!isReplyingToMoment">
+                <button type="button" class="btn btn btn-info pull-right"
+                        data-ng-click="isReplyingToMoment = true">Reply
+                </button>
+              </div>
+
+            </div>
+            <div class="row" data-ng-if="isReplyingToMoment">
+              <div class="pull-right" style="width:100%">
+                <div style="position:relative;">
             <textarea class="form-control" name="content" id="field_content"
                       style="resize: vertical; margin-top: 10px; margin-bottom: 5px;"
                       data-ng-model="comment.content"
-                      placeholder="Content.."
-                      required></textarea>
-              <i class="fa fa-remove" style="position:absolute;top:10px;right:10px;color:#33333380"
-                 data-ng-click="closeReply()"></i>
-            </div>
+                      placeholder="Content.."></textarea>
+                  <i class="fa fa-remove" style="position:absolute;top:10px;right:10px;color:#33333380"
+                     data-ng-click="closeReply()"></i>
+                </div>
 
-            <button type="button" class="btn btn btn-success pull-right"
-                    data-ng-click="sendReply()">Send message
-            </button>
+                <button type="button" class="btn btn btn-success pull-right"
+                        data-ng-click="sendReply()"
+                        data-ng-disabled="!comment.content">Send message
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -16,6 +16,11 @@ angular.module('shoumeApp')
           $scope.recipe = response.data;
           History.addRecipe($scope.recipe);
           try {
+            if ($scope.recipe.tags.length == 1 && $scope.recipe.tags[0].includes(",")) {
+              var values = $scope.recipe.tags[0];
+
+              $scope.recipe.tags = values.split(",");
+            }
             $scope.recipe.description = JSON.parse($scope.recipe.description);
             $scope.recipe.low = false;
           } catch (e) {

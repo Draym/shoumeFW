@@ -8,42 +8,46 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AddMomentModalCtrl', function ($scope, $uibModalInstance, RequestAPI, SubmitResult, User, FileUploader) {
-    $scope.flow = {};
+  .controller('AddMomentModalCtrl', function ($scope, $uibModalInstance, RequestAPI, SubmitResult, User) {
     $scope.isBusy = false;
+    $scope.images = [];
+    $scope.currentImage = "";
+
+    /*** FUNCTION ***/
+    $scope.addImage = function () {
+      console.log("addImage");
+      if ($scope.images.length < 4) {
+        $scope.images.push($scope.currentImage);
+      }
+      $scope.currentImage = "";
+    };
+
+    $scope.removeImage = function (id) {
+      for (var i = 0; i < $scope.images.length; ++i) {
+        if ($scope.images[i] == id) {
+          $scope.images.splice(i, 1);
+          --i;
+          break;
+        }
+      }
+    };
 
     $scope.save = function () {
       $scope.isBusy = true;
-      /*
-       console.log("images: ", $scope.flow);
-       RequestAPI.POST("/upload", $scope.flow.content.files[0].file, SubmitResult.submitSuccess(function (response) {
-       console.log("YEAH: ", response);
-       }),
-       SubmitResult.submitFailure(), User.getToken());
-       */
+      $scope.moment.image_url = JSON.stringify($scope.images);
+
       RequestAPI.POST("/moment", $scope.moment, SubmitResult.submitSuccess(function (response) {
           $scope.init();
           $scope.clear();
           $scope.isBusy = false;
         }, "Moment created"),
-        SubmitResult.submitFailure(function() {
+        SubmitResult.submitFailure(function () {
           $scope.isBusy = false;
         }), User.getToken());
-    };
-
-    $scope.limitFiles = function($files, max) {
-      if ($files.length > max) {
-        $files.length = max;
-      }
-    };
-
-    $scope.uploader = new FileUploader();
-
-    $scope.checkImg = function () {
-      console.log("draw: ", $scope.img);
     };
 
     $scope.clear = function () {
       $uibModalInstance.dismiss('cancel');
     };
-  });
+  })
+;

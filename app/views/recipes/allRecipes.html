@@ -71,7 +71,6 @@
       </div>
     </div>
     <div class="col-md-6">
-
       <div class="panel" data-ng-repeat="recipe in pagedItems[currentPage] track by $index"
            data-ng-if="$index >= (pagedItems[currentPage].length / 2)"
            data-ng-class="getActive(recipe) ? 'panel-warning' : 'panel-yellow'">

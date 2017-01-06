@@ -168,3 +168,37 @@ input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between c
 
 input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
 input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
+
+
+/* ==========================================================================
+Borders
+========================================================================== */
+.border-crossed {
+  padding: 15px;
+  border: 2px #cbcbcb dashed;
+  border-radius: 5px;
+  line-height: 34px;
+}
+
+/* ==========================================================================
+Position
+========================================================================== */
+.center {
+  display: flex;
+  margin: auto;
+}
+
+
+/* ==========================================================================
+Image
+========================================================================== */
+
+.img-lg {
+  max-height: 120px;
+  max-width: 120px;
+}
+
+.img-sm {
+  max-height: 50px;
+  max-width: 50px;
+}

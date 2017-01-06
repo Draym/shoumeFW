@@ -126,7 +126,13 @@ angular.module('shoumeApp')
     $scope.init = function () {
       RequestAPI.GET("/moments", SubmitResult.submitSuccess(function (response) {
           $scope.unparsedMoments = response.data;
-
+          for (var i = 0; i < $scope.unparsedMoments.length; ++i) {
+            try {
+              $scope.unparsedMoments[i].images = JSON.parse($scope.unparsedMoments[i].image_url);
+            } catch (e) {
+              $scope.unparsedMoments[i].images = [];
+            }
+          }
           History.initMoments($scope.unparsedMoments);
           $scope.parseUnparsedMoments();
         }),

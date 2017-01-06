@@ -15,6 +15,11 @@ angular.module('shoumeApp')
     $scope.init = function () {
       RequestAPI.GET("/moment/" + $scope.id, SubmitResult.submitSuccess(function (response) {
           $scope.moment = response.data;
+          try {
+            $scope.moment.images = JSON.parse($scope.moment.image_url);
+          } catch (e) {
+            $scope.moment.images = [];
+          }
           History.addMoment($scope.moment);
           RequestAPI.GET("/moment/" + $scope.moment.id + "/comments", SubmitResult.submitSuccess(function (response) {
               $scope.comments = response.data;
@@ -37,18 +42,20 @@ angular.module('shoumeApp')
     };
 
     $scope.sendReply = function () {
-      RequestAPI.GET("/user", SubmitResult.submitSuccess(function (response) {
-          $scope.comment.thumbnail = response.data.thumbnail;
-          RequestAPI.POST("/moment/" + $scope.moment.id + "/comment", $scope.comment, SubmitResult.submitSuccess(function (response) {
-              $scope.comment.content = "";
-              RequestAPI.GET("/moment/" + $scope.moment.id + "/comments", SubmitResult.submitSuccess(function (response) {
-                  $scope.comments = response.data;
-                }, "comment send"),
-                SubmitResult.submitFailure(), User.getToken());
-            }),
-            SubmitResult.submitFailure(), User.getToken());
-        }),
-        SubmitResult.submitFailure(), User.getToken());
+      if ($scope.comment.content) {
+        RequestAPI.GET("/user", SubmitResult.submitSuccess(function (response) {
+            $scope.comment.thumbnail = response.data.thumbnail;
+            RequestAPI.POST("/moment/" + $scope.moment.id + "/comment", $scope.comment, SubmitResult.submitSuccess(function (response) {
+                $scope.comment.content = "";
+                RequestAPI.GET("/moment/" + $scope.moment.id + "/comments", SubmitResult.submitSuccess(function (response) {
+                    $scope.comments = response.data;
+                  }, "comment send"),
+                  SubmitResult.submitFailure(), User.getToken());
+              }),
+              SubmitResult.submitFailure(), User.getToken());
+          }),
+          SubmitResult.submitFailure(), User.getToken());
+      }
     };
 
     $scope.init();
