@@ -13,7 +13,6 @@ angular.module('shoumeApp')
 
     $scope.initChanges = function () {
       CloneUtilsCustom.copyObject($scope.user, $scope.change);
-      console.log($scope.user);
       $scope.change.passwordVerif = $scope.change.password;
     };
 

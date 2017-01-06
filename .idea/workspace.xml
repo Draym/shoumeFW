@@ -4,20 +4,17 @@
     <bookmark url="file://$PROJECT_DIR$/app/scripts/controllers/login/login.js" line="14" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e27e6d80-7526-4e4d-b5ef-8ae762ef0214" name="Default" comment="[ADD] history&#10;[CORRECT] label recipe&#10;[ADD] moment list pagination&#10;[ADD] list well">
+    <list default="true" id="e27e6d80-7526-4e4d-b5ef-8ae762ef0214" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/account/createAccount.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/account/createAccount.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/account/myAccount.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/account/myAccount.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/login/login.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/login/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/main.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/moments/moment.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/moments/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/moments/myMoments.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/moments/myMoments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/recipes/recipe.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/recipes/recipe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/custom.css" afterPath="$PROJECT_DIR$/app/styles/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/moments/addMomentModal.html" afterPath="$PROJECT_DIR$/app/views/moments/addMomentModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/moments/allMoments.html" afterPath="$PROJECT_DIR$/app/views/moments/allMoments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/moments/moment.html" afterPath="$PROJECT_DIR$/app/views/moments/moment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/moments/myMoments.html" afterPath="$PROJECT_DIR$/app/views/moments/myMoments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recipes/allRecipes.html" afterPath="$PROJECT_DIR$/app/views/recipes/allRecipes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shoumeFW.iml" afterPath="$PROJECT_DIR$/shoumeFW.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/recipes/addRecipeModal.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/recipes/addRecipeModal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/accountNavbarWidget.js" afterPath="$PROJECT_DIR$/app/scripts/directives/accountNavbarWidget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/submitResult.js" afterPath="$PROJECT_DIR$/app/scripts/services/submitResult.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
     </list>
     <ignored path="shoume4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,124 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="addMomentModal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/moments/addMomentModal.html">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allMoments.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/moments/allMoments.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="moment.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/moments/moment.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/history.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="202" column="14" selection-start-line="202" selection-start-column="14" selection-end-line="202" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addMomentModal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allMoments.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="133" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="moment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/moment.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recipe.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/recipes/recipe.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myRecipes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/recipes/myRecipes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="153" selection-end-column="13" />
+            <state relative-caret-position="17">
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -185,7 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/controllers/myAccount.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/views/loginNavbarWidget.html" />
@@ -197,7 +80,6 @@
         <option value="$PROJECT_DIR$/app/scripts/services/toolsUtils.js" />
         <option value="$PROJECT_DIR$/app/styles/comments.css" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/toto.js" />
-        <option value="$PROJECT_DIR$/app/scripts/directives/accountNavbarWidget.js" />
         <option value="$PROJECT_DIR$/node_modules/autoprefixer-core/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/login/login.html" />
@@ -207,21 +89,14 @@
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
         <option value="$PROJECT_DIR$/app/scripts/services/tokenManager.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/requestAPI.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/submitResult.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/account/createAccount.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/login/login.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/account/myAccount.js" />
         <option value="$PROJECT_DIR$/app/views/account/myAccount.html" />
         <option value="$PROJECT_DIR$/app/views/recipes/addRecipeModal.html" />
         <option value="$PROJECT_DIR$/app/views/recipes/recipe.html" />
         <option value="$PROJECT_DIR$/app/views/about.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/about.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/user.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/history.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/addRecipeModal.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/allRecipes.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/myRecipes.js" />
         <option value="$PROJECT_DIR$/app/views/recipes/myRecipes.html" />
@@ -229,13 +104,22 @@
         <option value="$PROJECT_DIR$/app/views/moments/myMoments.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/moments/myMoments.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js" />
         <option value="$PROJECT_DIR$/app/views/moments/addMomentModal.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/recipe.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/moments/moment.js" />
         <option value="$PROJECT_DIR$/app/styles/custom.css" />
         <option value="$PROJECT_DIR$/app/views/moments/moment.html" />
         <option value="$PROJECT_DIR$/app/views/moments/allMoments.html" />
+        <option value="$PROJECT_DIR$/app/scripts/services/history.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/account/myAccount.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/account/createAccount.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/login/login.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/recipes/addRecipeModal.js" />
+        <option value="$PROJECT_DIR$/app/scripts/directives/accountNavbarWidget.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/submitResult.js" />
+        <option value="$PROJECT_DIR$/app/views/main.html" />
       </list>
     </option>
   </component>
@@ -1191,7 +1075,7 @@
       <workItem from="1482725958108" duration="707000" />
       <workItem from="1483412858914" duration="1677000" />
       <workItem from="1483567445046" duration="1790000" />
-      <workItem from="1483714502389" duration="23425000" />
+      <workItem from="1483714502389" duration="23931000" />
     </task>
     <task id="LOCAL-00001" summary="add tokenManager&#10;correction width login css">
       <created>1478418412963</created>
@@ -1424,11 +1308,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483731820825</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="[ADD] moment list image&#10;[ADD] add/remove image to moment&#10;[ADD] list moment / moment detail draw images">
+      <created>1483739491283</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1483739491283</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165256000" />
+    <option name="totallyTimeSpent" value="165762000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1452,13 +1343,13 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23185265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29469123" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29469123" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1501,7 +1392,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
     <MESSAGE value="[ADD] moment / recipe structure" />
     <MESSAGE value="[ADD] request api for all items&#10;[ADD] factories update" />
     <MESSAGE value="[ADD] edit profile" />
@@ -1526,7 +1416,8 @@
     <MESSAGE value="[CreateAgain] list recipes (All, My)&#10;[ADD] gestion images account, recipe&#10;[ADD] gestion ingredients recipes&#10;[CORRECTION] recipe tags&#10;[ADD] search recipe by name tag" />
     <MESSAGE value="[ADD] add user thumbnail on comments" />
     <MESSAGE value="[ADD] history&#10;[CORRECT] label recipe&#10;[ADD] moment list pagination&#10;[ADD] list well" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] history&#10;[CORRECT] label recipe&#10;[ADD] moment list pagination&#10;[ADD] list well" />
+    <MESSAGE value="[ADD] moment list image&#10;[ADD] add/remove image to moment&#10;[ADD] list moment / moment detail draw images" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] moment list image&#10;[ADD] add/remove image to moment&#10;[ADD] list moment / moment detail draw images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1537,14 +1428,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/toto.js" />
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/accountNavbarWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/autoprefixer-core/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1621,13 +1504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/icons.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1660,30 +1536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/submitResult.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/account/createAccount.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/account/myAccount.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1696,14 +1548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/account/myAccount.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="55" selection-start-line="20" selection-start-column="5" selection-end-line="24" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1744,14 +1588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="469" column="49" selection-start-line="469" selection-start-column="49" selection-end-line="469" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/recipes/addRecipeModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1880,53 +1716,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="133" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/moment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/moments/addMomentModal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
           <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h2#1;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#form#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1944,18 +1747,17 @@
         <state relative-caret-position="289">
           <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/moments/allMoments.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
+        <state relative-caret-position="646">
           <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -1964,6 +1766,102 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/moment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/allMoments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="122" column="6" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/history.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/account/myAccount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/account/createAccount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/moments/addMomentModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/recipes/addRecipeModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/accountNavbarWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/submitResult.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

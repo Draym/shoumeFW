@@ -9,6 +9,4 @@
  */
 angular.module('shoumeApp')
   .controller('MainCtrl', function ($scope, User) {
-
-    console.log("Salut: ", User.getToken());
   });

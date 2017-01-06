@@ -17,7 +17,6 @@ angular.module('shoumeApp')
   .controller('AccountNavbarWidgetCtrl', function ($scope, $location, User) {
 
     $scope.userCtrl = User;
-  console.log("HI");
     $scope.myAccount = function() {
       $location.path("/myAccount");
     };

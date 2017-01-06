@@ -15,7 +15,6 @@ angular.module('shoumeApp')
 
     /*** FUNCTION ***/
     $scope.addImage = function () {
-      console.log("addImage");
       if ($scope.images.length < 4) {
         $scope.images.push($scope.currentImage);
       }

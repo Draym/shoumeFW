@@ -13,7 +13,6 @@ angular.module('shoumeApp')
     $scope.isBusy = false;
 
     $scope.register = function () {
-      console.log("register", $scope.name, $scope.email, $scope.password);
       $scope.data = {
         login: $scope.email,
         password: $scope.password

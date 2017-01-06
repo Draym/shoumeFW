@@ -19,7 +19,6 @@ angular.module('shoumeApp')
     };
 
     $scope.doLogin = function () {
-      console.log("login: ", $scope.data.login, $scope.data.password);
       $scope.isBusy = true;
       RequestAPI.POST("/authenticate", $scope.data,
         SubmitResult.submitSuccess(function (response) {

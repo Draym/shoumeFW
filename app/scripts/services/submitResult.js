@@ -19,7 +19,7 @@ angular.module('shoumeApp')
       },
       submitSuccess: function(optionalTask, optionalMessage) {
         return function(response) {
-          console.log("Success:", response);
+          //console.log("Success:", response);
           if (!(optionalMessage == null)) {
             toaster.success({'body': (optionalMessage == "" ? "Done" : optionalMessage)});
           }
