@@ -64,7 +64,6 @@ body {
 }
 
 .comments-list:after {
-  content: '';
   position: absolute;
   background: #c7cacb;
   bottom: 0;
@@ -151,6 +150,17 @@ body {
 /**
  * Caja del Comentario
  ---------------------------*/
+
+.comment-head div{
+  display: flex;
+  align-items: center;
+  float: left;
+}
+
+.comment-head h6{
+  margin: 0 0;
+}
+
 .comments-list .comment-box {
   width: 680px;
   float: right;

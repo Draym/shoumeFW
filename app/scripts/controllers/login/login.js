@@ -28,5 +28,6 @@ angular.module('shoumeApp')
           $scope.isBusy = false;
         }, "Connected"),
         SubmitResult.submitFailure("Connexion Failed"));
+        $scope.isBusy = false;
     };
   });
