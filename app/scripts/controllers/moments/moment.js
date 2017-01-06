@@ -39,7 +39,7 @@ angular.module('shoumeApp')
       console.log("comment: ", $scope.comment);
       RequestAPI.POST("/moment/" + $scope.moment.id + "/comment", $scope.comment, SubmitResult.submitSuccess(function (response) {
           SubmitResult.submitSuccess("comment send");
-          $scope.comment = '';
+          $scope.comment.content = "";
           RequestAPI.GET("/moment/" + $scope.moment.id + "/comments", SubmitResult.submitSuccess(function (response) {
               $scope.comments = response.data;
             }),
