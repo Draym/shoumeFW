@@ -10,8 +10,10 @@
       <h2>Comments</h2>
       <ul id="comments-list" class="comments-list">
         <li ng-repeat="comment in comments">
-            <div class="comment-avatar"><img
-              src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+            <div class="comment-avatar">
+              <img src="{{comment.thumbnail}}" alt="" data-ng-if="comment.thumbnail">
+              <img src="https://tse3-mm.cn.bing.net/th?id=OIP.Mbe732ac7cb83a1ea8ce6692382a363cao0&pid=15.1&P=0&w=300&h=300" alt="" data-ng-if="!comment.thumbnail">
+            </div>
 
             <div class="comment-box">
               <div class="comment-head">
@@ -19,7 +21,6 @@
                   <h6 class="comment-name">{{comment.owner_login}}</h6>
                   <h6>{{ comment.date | date:'medium'}}</h6>
                 </div>
-                <i class="fa fa-reply"></i>
                 <i class="fa fa-heart"></i>
               </div>
               <div class="comment-content">
