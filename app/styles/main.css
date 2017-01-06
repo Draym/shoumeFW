@@ -181,6 +181,13 @@ body {
   border-color: #D7D7D7;
 }
 
+.account-img {
+  margin-bottom: 10px;
+}
+
+.account-img input{
+  display: initial;
+}
 
 /* DEFAULT */
 
