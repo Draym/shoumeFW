@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AllRecipesCtrl', function ($scope, $timeout, toaster, SubmitResult, RequestAPI, User, CloneUtilsCustom) {
+  .controller('AllRecipesCtrl', function ($scope, $timeout, $location, toaster, SubmitResult, RequestAPI, User, CloneUtilsCustom, History) {
 
     $scope.itemsPerPage = 6;
     $scope.pagedItems = [];
@@ -103,12 +103,13 @@ angular.module('shoumeApp')
     };
 
     $scope.sortParsedRecipes = function () {
-      $scope.recipes.sort(function(item1, item2){
+      $scope.recipes.sort(function (item1, item2) {
         return item1.date < item2.date;
       });
     };
 
     $scope.parseUnparsedRecipes = function () {
+      $scope.currentPage = 0;
       $scope.recipes = CloneUtilsCustom.cloneArray($scope.unparsedRecipes);
 
       parseByName();
@@ -117,13 +118,29 @@ angular.module('shoumeApp')
       $scope.groupToPages();
     };
 
+    /*** FUNCTION ***/
+
+    $scope.openDetail = function(id) {
+      $location.path("/recipe/" + id);
+    };
+
+    $scope.getActive = function (recipe) {
+      return History.getRecipe(recipe.id);
+    };
+
     /*** LOAD ***/
     $scope.init = function () {
       RequestAPI.GET("/recipes", SubmitResult.submitSuccess(function (response) {
           $scope.unparsedRecipes = response.data;
 
+          History.initRecipes($scope.unparsedRecipes);
           for (var i = 0; i < $scope.unparsedRecipes.length; ++i) {
             try {
+              if ($scope.unparsedRecipes[i].tags.length == 1 && $scope.unparsedRecipes[i].tags[0].includes(",")) {
+                var values = $scope.unparsedRecipes[i].tags[0];
+
+                $scope.unparsedRecipes[i].tags = values.split(",");
+              }
               $scope.unparsedRecipes[i].description = JSON.parse($scope.unparsedRecipes[i].description);
               $scope.unparsedRecipes[i].low = false;
             } catch (e) {

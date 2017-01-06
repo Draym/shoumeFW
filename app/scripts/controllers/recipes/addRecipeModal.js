@@ -105,6 +105,7 @@ angular.module('shoumeApp')
       }
       recipeFormat.description = JSON.stringify(recipeFormat.description);
 
+      console.log("final: ", recipeFormat);
       RequestAPI.POST("/recipe", recipeFormat, SubmitResult.submitSuccess(function (response) {
           $scope.init();
           $scope.clear();

@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('AboutCtrl', function ($scope, $cookies) {
+  .controller('AboutCtrl', function ($scope, User, History) {
 
     $(document).ready(function() {
       $('#Carousel').carousel({
@@ -17,7 +17,7 @@ angular.module('shoumeApp')
     });
 
     $scope.removeCookies = function () {
-      $cookies.remove("userConnected");
-      $cookies.remove("token")
+      User.clean();
+      History.clean();
     };
   });

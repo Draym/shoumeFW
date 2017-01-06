@@ -8,12 +8,13 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('RecipeCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, User) {
+  .controller('RecipeCtrl', function ($scope, $routeParams, RequestAPI, SubmitResult, User, History) {
     $scope.id = $routeParams.id;
 
     $scope.init = function () {
       RequestAPI.GET("/recipe/" + $scope.id, SubmitResult.submitSuccess(function (response) {
           $scope.recipe = response.data;
+          History.addRecipe($scope.recipe);
           try {
             $scope.recipe.description = JSON.parse($scope.recipe.description);
             $scope.recipe.low = false;

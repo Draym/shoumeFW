@@ -71,6 +71,11 @@ angular.module('shoumeApp')
       },
       disconnect: function () {
         disconnect();
+      },
+      clean: function() {
+        $cookies.remove(idUserCo);
+        $cookies.remove(idToken);
+        $cookies.remove(idUserId);
       }
     };
   });

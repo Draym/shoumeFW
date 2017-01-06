@@ -8,7 +8,7 @@
  * Controller of the shoumeApp
  */
 angular.module('shoumeApp')
-  .controller('MyRecipesCtrl', function ($scope, $uibModal, $timeout, toaster, User, SubmitResult, RequestAPI, CloneUtilsCustom) {
+  .controller('MyRecipesCtrl', function ($scope, $uibModal, $timeout, $location, toaster, User, SubmitResult, RequestAPI, CloneUtilsCustom) {
 
 
     $scope.itemsPerPage = 6;
@@ -110,6 +110,7 @@ angular.module('shoumeApp')
     };
 
     $scope.parseUnparsedRecipes = function () {
+      $scope.currentPage = 0;
       $scope.recipes = CloneUtilsCustom.cloneArray($scope.unparsedRecipes);
 
       parseByName();
@@ -129,6 +130,10 @@ angular.module('shoumeApp')
       });
     };
 
+    $scope.openDetail = function(id) {
+      $location.path("/recipe/" + id);
+    };
+
     /*** LOAD ***/
 
     $scope.init = function () {
@@ -137,6 +142,11 @@ angular.module('shoumeApp')
 
           for (var i = 0; i < $scope.unparsedRecipes.length; ++i) {
             try {
+              if ($scope.unparsedRecipes[i].tags.length == 1 && $scope.unparsedRecipes[i].tags[0].includes(",")) {
+                var values = $scope.unparsedRecipes[i].tags[0];
+
+                $scope.unparsedRecipes[i].tags = values.split(",");
+              }
               $scope.unparsedRecipes[i].description = JSON.parse($scope.unparsedRecipes[i].description);
               $scope.unparsedRecipes[i].low = false;
             } catch (e) {
