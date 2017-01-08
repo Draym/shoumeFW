@@ -83,6 +83,11 @@ angular
         controller: 'RecipeCtrl',
         controllerAs: 'recipe'
       })
+      .when('/manageIngredients', {
+        templateUrl: 'views/ingredient/manageIngredient.html',
+        controller: 'ManageIngredientCtrl',
+        controllerAs: 'manageIngredient'
+      })
       .otherwise({
         redirectTo: '/'
       });

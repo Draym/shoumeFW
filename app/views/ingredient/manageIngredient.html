@@ -1,0 +1,61 @@
+<div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Ingredients
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-inline" style="padding-left: 5px; margin-bottom: 10px">
+            <label for="name">Search : </label>
+            <input type="text" name="path" id="name" class="form-control"
+                   value="" data-ng-model="searchName" placeholder="name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <td colspan="6">
+              <div class="pagination pull-right">
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-primary active"
+                         data-ng-class="{disabled: firstPage()}"
+                         data-ng-click="prevPage()">
+                    <input type="radio" name="options" id="prev" autocomplete="off"> Prev
+                  </label>
+                  <label class="btn btn-primary active">
+                    <input type="radio" name="options" id="current" autocomplete="off"> {{currentPage + 1}}
+                  </label>
+                  <label class="btn btn-primary active"
+                         data-ng-class="{disabled: lastPage()}"
+                         data-ng-click="nextPage()">
+                    <input type="radio" name="options" id="next" autocomplete="off"> Next
+                  </label>
+                </div>
+              </div>
+            </td>
+            </tfoot>
+            <tbody>
+            <tr data-ng-repeat="ingredient in pagedItems[currentPage] track by $index">
+              <td>{{ingredient.pseudo}}<span class="title-info" data-ng-if="ingredient.inactif">(I)</span></td>
+              <td>{{ingredient.score.total}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.table-responsive -->
+      </div>
+    </div>
+    <!-- /.panel-body -->
+  </div>
+  <!-- /.panel -->
+</div>

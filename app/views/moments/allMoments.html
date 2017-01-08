@@ -34,7 +34,7 @@
             <img class="img-responsive img-sm" src="{{image}}"/>
           </div>
         </div>
-        <div class="col-md-6">
+        <div data-ng-class="moment.images.length == 0 ? col-md-12 : col-md-6">
           <strong>{{moment.content}}</strong>
         </div>
       </div>

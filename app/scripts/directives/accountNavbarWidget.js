@@ -29,6 +29,10 @@ angular.module('shoumeApp')
       $location.path("/myRecipes");
     };
 
+    $scope.manageIngredients = function() {
+      $location.path("/manageIngredients");
+    };
+
     $scope.disconnect = function() {
       $scope.userCtrl.disconnect();
     }
